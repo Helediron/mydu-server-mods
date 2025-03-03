@@ -84,6 +84,12 @@ public class MyDuMod: IMod
                     label = "Sound Here",
                     context = ModActionContext.Element,
                 },
+                new ModActionDefinition
+                {
+                    id = 2,
+                    label = "Test LUA",
+                    context = ModActionContext.Element,
+                },
             }
         };
     }
@@ -151,12 +157,17 @@ public class MyDuMod: IMod
                 elems.Add(el);
             }
         }
-        
+        bool reloadVoxels = false;
         var allFiles = Directory.GetFiles(dir);
         foreach (var fn in allFiles)
         {
             if (processed.Contains(fn))
                 continue;
+            if (fn == "voxels.load")
+            {
+                reloadVoxels = true;
+                continue;
+            }
             var content = File.ReadAllBytes(fn);
             var s = new VoxelEdit
             {
@@ -181,9 +192,30 @@ public class MyDuMod: IMod
             await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
                 new NQutils.Messages.VoxelCsgApplied(s));
         }
+        await Task.Delay(500);
+        if (reloadVoxels)
+        {
+            var vr = new VoxelEdit
+            {
+                flags = 6,
+            };
+            logger.LogInformation("sending voxels reload...");
+            await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+                new NQutils.Messages.VoxelCsgApplied(vr));
+        }
     }
     public async Task TriggerAction(ulong playerId, ModAction action)
     {
+        if (action.actionId == 2)
+        {
+            await isp.GetRequiredService<IPub>().NotifyTopic(Topics.PlayerNotifications(playerId),
+            new NQutils.Messages.ModTriggerHudEventRequest(new ModTriggerHudEvent
+                {
+                    eventName = "modinjectjs",
+                    eventPayload = $"CPPMod.luaElementEmitEvent({action.constructId}, {action.elementId}, \"construct\", \"onDocked\", [\"canard\"]);",
+                }));
+            return;
+        }
         if (action.actionId == 1)
         {
             await Task.Delay(1500);

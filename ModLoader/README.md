@@ -37,6 +37,8 @@ connecting client, based on the file extension:
 - .elr : plain text file with one element name per line, sent as element reload requests at the end
 - everything else : sent to unigine filesystem RAM disk
 
+If the file 'voxels.load' is present, voxel materials and textures will be reloaded
+by the client. Use it if you inject new voxels.
 
 Note that cached resource will be
 sent with a "resources_generated/" filesystem prefix, which is required for
@@ -46,3 +48,39 @@ accordingly.
 ## Warning
 
 Always use lowercase file names or resource files may fail to load.
+
+
+## Sample voxel nqdef
+
+This sample expect files "<name>_c.dds", "<name>_n.dds" and "<name>_mrao.dds"
+to be injected also.
+
+
+```json
+{
+  "worlds": {
+    "voxel": {
+      "materialDefinitions": {
+        "hcombs_v1": {
+          "materialType": "non_blending",
+          "layers": [
+            "c",
+            "n",
+            "mrao"
+          ],
+          "materials": {
+            "MyCoolVoxelHC": {
+              "texture": "resources_generated/<name>",
+              "albedo": [
+                0.5,
+                0.5,
+                0.5
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
