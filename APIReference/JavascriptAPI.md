@@ -89,7 +89,15 @@ worldRotation: quaternion
 
 ## CPPMod.luaElementGetSignalOut(constructId, elementId, plugName)
 
-## CPPMod.luaElementEmitEvent(constructId, elementId, eventName, [argsDouble...])
+## CPPMod.luaElementEmitEvent(constructId, elementId, slotName, eventName, [args...])
+
+Emit an event as if the unit had received it.
+
+args is an array that can contain numbers or character strings.
+
+Example, assuming a prog board with id 12345 on construct 10000:
+
+    CPPMod.luaElementEmitEvent(10000, 12345, "construct", "onDocked", [5142])
 
 ## CPPMod.animationElementPlay(constructId, elementId, animName)
 
