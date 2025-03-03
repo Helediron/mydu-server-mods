@@ -1,4 +1,8 @@
 GameplayObject:
+  assetAlias:
+    help: alias asset to this value
+    type: string
+    value: ""
   displayName:
     help: display name (deprecated, removed once localized)
     type: string
@@ -375,7 +379,7 @@ LaserEmitterUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 RawMaterial:
   parent: MineableMaterial
   csharp_generation: force
@@ -444,6 +448,13 @@ Element:
   maxCountPerConstruct:
     type: int
     value: -1
+  nbControlPlugIn:
+    type: int
+    min: 0
+    max: 8192
+    value: 3
+  extraPlugs:
+    type: ExtraPlugs
   dynamic_properties:
     gameplayTag:
       type: DynamicPropertyString
@@ -555,6 +566,11 @@ CoreUnit:
     min: 0.25
     max: 8.0
     value: 0.25
+  nbCoreUnitControlPlugIn:
+    type: int
+    min: 0
+    max: 8192
+    value: 10
   dynamic_properties:
     endOfWarpCooldown:
       type: DynamicPropertyInt
@@ -668,7 +684,7 @@ CoreUnit:
         defaultValue: 0
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CORE_UNIT_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbCoreUnitControlPlugIn" }
 ElementLDFX:
   parent: Other
   dynamic_properties:
@@ -722,7 +738,7 @@ DoorUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 ElevatorUnit:
   parent: FurnituresAppliances
   max_range:
@@ -826,7 +842,7 @@ BaseShieldGeneratorUnit:
       isReadOnly: true
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
 ShieldGeneratorUnit:
   parent: CombatDefense
@@ -898,7 +914,7 @@ ShieldGeneratorUnit:
       isReadOnly: true
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
 Piloting:
   parent: ConstructElement
@@ -967,7 +983,7 @@ AntiGravityGeneratorUnit:
       type: DynamicPropertyDouble
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
       - { key: "PlugType::PLUG_ELECTRICITY", name: "Link::PLUG_NAME_POWER" }
     out:
@@ -983,6 +999,34 @@ WarpBeaconUnit:
     type: double
     min: 0
     value: 86400 # 24*60*60 = 24h
+  minWarpDistance:
+    help: "Minimum distance for warping to this beacon"
+    type: double
+    min: 0
+    value: 200000
+  maxWarpDistance:
+    help: "Maximum distance for warping to this beacon"
+    type: double
+    min: 0
+    value: 100000000
+  warpCellRate:
+    help: "Cell consumption rate"
+    type: double
+    min: 0
+    value: 0.00025
+  cruiseSpeedKmH:
+    help: "Cruise speed"
+    type: double
+    min: 0
+    value: 2520000
+  maxPeerBeaconDistance:
+    help: "Max distance to local beacon of the same type"
+    type: double
+    min: 0
+    value: 0
+  requiredWarpDriveTypeNames:
+    help: "Item type names of required warp drive to use this beacon, empty for all"
+    type: StringVector
   plug_properties:
     in:
       - { key: "PlugType::PLUG_ELECTRICITY", name: "Link::PLUG_NAME_POWER" }
@@ -991,7 +1035,7 @@ WarpDriveUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_ITEM", name: "Link::PLUG_NAME_CONTAINER" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
       - { key: "PlugType::PLUG_ELECTRICITY", name: "Link::PLUG_NAME_POWER" }
 SurfaceEngine:
   parent: EngineDisplay
@@ -1044,7 +1088,7 @@ CounterUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_SIGNAL", count: nbPlugOut }
 DataBankUnit:
@@ -1053,6 +1097,11 @@ DataBankUnit:
     type: int
     min: 0
     value: 30000
+  nbDatabankControlPlugIn:
+    type: int
+    min: 0
+    max: 8192
+    value: 20
   dynamic_properties:
     databank:
       type: DynamicPropertyString
@@ -1062,10 +1111,10 @@ DataBankUnit:
         requireInstance: true
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_DATABANK_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbDatabankControlPlugIn" }
 AntiGravityPulsorUnit:
   parent: HighTechTransportation
-  plug_properties:
+  plug_properties:                  
     in:
       - { key: "PlugType::PLUG_GRAVITON", name: "Link::PLUG_NAME_IN" }
 ContainerUnit:
@@ -1128,7 +1177,7 @@ ContainerUnit:
         defaultValue: 0
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 DispenserUnit:
   parent: ContainerUnit
   isAdmin:
@@ -1227,7 +1276,7 @@ AmmoContainerUnit:
     value: 10
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_ITEM", elementTypes: [ "WeaponUnit" ], count: nbWeaponPlug }
 ItemContainerBase:
@@ -1482,7 +1531,7 @@ EmitterUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 ReceiverUnit:
   parent: ElectronicUnit
   range:
@@ -1502,7 +1551,7 @@ ReceiverUnit:
         isStream: true
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_OUT" }
 TransponderUnit:
@@ -1524,7 +1573,7 @@ TransponderUnit:
         isSavedInBlueprint: true
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
 RelayUnit:
   parent: ElectronicUnit
@@ -1620,7 +1669,7 @@ EngineUnit:
         isSavedInBlueprint: true
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
 VerticalBooster:
   parent: SurfaceEngine
@@ -1695,7 +1744,7 @@ PlasmaExtractorUnit:
       type: DynamicPropertyInt
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_ITEM", name: "Link::PLUG_NAME_OUT", elementTypes: [ "ItemContainer", "ContainerHub" ], count: 1 }
 MiningUnit:
@@ -1742,7 +1791,7 @@ MiningUnit:
     value: 1
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_ITEM", name: "Link::PLUG_NAME_OUT", elementTypes: [ "ItemContainer", "ContainerHub" ], count: 1 }
   dynamic_properties:
@@ -1799,10 +1848,15 @@ IndustryUnit:
     help: Effect that modifies crafting time of all elements produced by this industry
     type: double
     value: 1.0
+  nbIndustryPlugIn:
+    type: int
+    min: 0
+    max: 8192
+    value: 7
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_ITEM", name: "Link::PLUG_NAME_IN", elementTypes: [ "ItemContainer", "ContainerHub" ], count: "Link::NB_INDUSTRY_PLUG_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_ITEM", name: "Link::PLUG_NAME_IN", elementTypes: [ "ItemContainer", "ContainerHub" ], count: "nbIndustryPlugIn" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_ITEM", name: "Link::PLUG_NAME_OUT", elementTypes: [ "ItemContainer", "ContainerHub" ], count: 1 }
   dynamic_properties:
@@ -1852,7 +1906,7 @@ GyroUnit:
   parent: SupportTechTransportation
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 TelemeterUnit:
   parent: Sensor
   range:
@@ -1862,7 +1916,7 @@ TelemeterUnit:
     value: 20
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 ManualButtonUnit:
   parent: Trigger
   dynamic_properties:
@@ -1872,7 +1926,7 @@ ManualButtonUnit:
         defaultValue: false
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_OUT" }
 InfoButtonUnit:
@@ -1949,7 +2003,7 @@ FireworksUnit:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
       - { key: "PlugType::PLUG_ITEM", name: "Link::PLUG_NAME_CONTAINER" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 LandingGearUnit:
   parent: SupportTechTransportation
   length:
@@ -1959,7 +2013,7 @@ LandingGearUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 CanonUnit:
   parent: DecorativeUnit
   length:
@@ -1986,7 +2040,7 @@ ForceFieldUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 ScreenUnit:
   parent: Display
   ratio:
@@ -2045,7 +2099,7 @@ ScreenUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 ArtifactUnit:
   parent: ScreenUnit
 LightUnit:
@@ -2087,7 +2141,7 @@ LightUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_IN" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 MarketPodUnit:
   parent: Other
   plug_properties:
@@ -2139,7 +2193,7 @@ DetectionZoneUnit:
         defaultValue: false
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_OUT" }
 LaserDetectorUnit:
@@ -2151,7 +2205,7 @@ LaserDetectorUnit:
         defaultValue: false
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_OUT" }
 ManualSwitchUnit:
@@ -2160,7 +2214,7 @@ ManualSwitchUnit:
     in:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_ON" }
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_OFF" }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_OUT" }
 PressureTileUnit:
@@ -2180,7 +2234,7 @@ PressureTileUnit:
         defaultValue: 0
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
     out:
       - { key: "PlugType::PLUG_SIGNAL", name: "Link::PLUG_NAME_OUT" }
 RadarUnit:
@@ -2197,7 +2251,7 @@ RadarUnit:
     value: 1.0
   plug_properties:
     in:
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 RadarPVPUnit:
   parent: CombatDefense
   fittingCapacity:
@@ -2372,7 +2426,7 @@ RadarPVPUnit:
   plug_properties:
     in:
       - { key: "PlugType::PLUG_CONTROL", elementTypes: [ "PVPSeatUnit", "KinematicsController" ] }
-      - { key: "PlugType::PLUG_CONTROL", count: "Link::NB_CONTROL_PLUG_IN" }
+      - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 RadarPvPSpace:
   parent: RadarPVPUnit
 TeleportationNodeUnit:
@@ -2973,6 +3027,10 @@ TerritoryScannerUnit:
         isPublic: false
 FeaturesList:
   parent: GameplayObject
+  luaRadarRestrictions:
+    help: Restrict position and velocity construct infos in lua to matching transponder
+    type: bool
+    value: true
   abandonConstructOnCrash:
     help: Whether a construct loses its owner after its core unit was destroyed due to physics
     type: bool

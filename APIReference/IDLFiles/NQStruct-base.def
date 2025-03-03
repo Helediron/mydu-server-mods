@@ -422,7 +422,12 @@ enum PlugType
     PLUG_MARKET      = 9
     PLUG_ROCKETFUEL  = 10
     PLUG_GRAVITON    = 11
-    PLUG_END         = 12
+    PLUG_USER1       = 12
+    PLUG_USER2       = 13
+    PLUG_USER3       = 14
+    PLUG_USER4       = 15
+    PLUG_USER5       = 16
+    PLUG_END         = 17
 end
 
 enum Gravity [enumNames]
