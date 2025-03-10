@@ -1,0 +1,58 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "abc2ce79ff82e7a9e7b4d7ddde9cbe9db42203cc",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 752,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "moon752",
+      "uniqueIdentifier" : "legacy/legacy_moon752"
+   },
+   "kind" : "planet",
+   "pipeline" : "ARYAAPEHeyJiYW5rRW50cmllcyI6W10sIm5vZAsA8xZ7ImRlYnVnTmFtZSI6Ik5vaXNlIiwiaW5wdXRDb25uZWN0aW9uNABobW9kdWxlKwDzDkYzUCIsInBhcmFtZXRlcnMiOnsiYSI6MS4wLCJiCAATYwgAFGQIAIJhbXAiOjAuNQsAU1NjYWxlGwAECACgbGFjdW5hcml0eRkAKTYwAQAQMb0A8xlpc2VUeXBlIjoiY2Fub25pY2FsIiwib2N0YXZlcyI6Nywib2Zmc2V0aQCxcGVyc2lzdGVuY2USABo5AQBCOCwic4cA8AwwLjAwMDE1MzE3MjEwMjMzNjExOTYyLCJzZWXAAIIyNTIsIndhcsEAOn19LD8Bf1BvbHlub21BAQNxeyJmcm9tTUQBQSI6MCwPAGNPdXRwdXRTAUV2YWx1fgEJFAAcfX4BBmoADX0BES1bAUFiIjothwEHfwEQMJcBAQEBHzC7ACkfMbsAR5QzOTEuNzE2MjTyAREzygCjOTU3LjUyODU4NgEAETjYAAHQABNkCAAP2AAED9ICgh84wwIQHzHDAgwIswIfMaECFYVIZWF2aXNpZGYCCuQDCqMCHzPoASsIbAAKpQIhZW61ARQ45QEDAgAQNHgE8gN2ZXJzZSI6ZmFsc2UsInN0YXLEAw+xAikfNMkAKw9sAwgBggIH6QQAcwMA2AQDGgAPlAIEBlEAD2gFAAqEAR81uwBOAcMAUWMiOi0zCgABmgEPuwAHD08D0hM1kQIEAgAfM18DQh832wErD18Ddx84yQArBg4DCiYEE2GcAgtfAw+jAg4GUAAPXgMOHzm6AE4BTAMAXgMRMQoAD14D8BQxVgMDAgAPvAZDHzGlCCwPXgMOGjVCCiA5OG8CD70GQS8xMqUCVwE6Cg+kAgw/QWRk4AoRHza2ABRgZ3JpZEEiSQsIHgsfMR8LFQA/AB5CHwsApQAAVAAI3AwAFAAApQEN2gwLewAP9wgVA3sAGyw/AA9tCBUAPwAfQboAOg8pAhUDegAMuQAPawgVAD8AD3MBFLFDb25zdE1hdGVyaaAND30BAAzZDAwzAAoUBo1kZWYiOiIxIg4KBGUAX1JlbWFwoAIRHzF/BxU+aGRmpgEMbwAKAg/9D21hcHBpbmciOltbMSwiQ2FueW9uUGViYmxlcyJdXbwAz0hERlNwYXRpYWxpepkLEh8xXQMWLmVv6AEPrwcBAOUAA58BA3gOPm1hdPcACqoADGED/wBWZXJ0ZXhFeHRyYWN0b3KGARIPggcBDo0AABIADeQDDG8ADI8AcENvbnRvdXKJAQPbAA/tDAkfMnIEAgHSAFRHcmlkc84AAx8BCBoADZoAB3oADJUAz0RlY29yc0dlbmVyYSQBFQ/uARVuaGVpZ2h08QEP6gIVX2Jpb21lzwAADrQACu8CQmRhdGHsAnFbeyJiaWFz9wgrMTQiB/kaLCJlZGl0b3JLZXkiOiJNb29uUmF3X2FzdGVyb2lkMyIsImVsZW1lbnRuErBJZEZvclNpZ25hbF8NBIoRdzAsInNsb3QcAGAiIn1dXV1UEjB0YTLkEg1oAwZlAxRFaQAPGQIQD20DFmJzdXJmYWMXAwjMBh8ymAUBBesAA4IAA1cCBRcADVQCD70AAAAkABFvQBIAMgELdQAPzwIPAjsAAkYTEDCoAgm1AA9AAAFAbWV0YV8BAGoTAXgAAj0AHTE9AA9DBwEF2wAKegAcMj0AD3ABCgi0AB0zOgAPTQQHCDgAHDQ4AB8yLAoBq29jdHJlZU1lc2juABw4PwAPUQUICHcAHDc4AA8YAg0IPQAcOT0AD78GCgg6AGAxMH1dfQo=",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 1632.1510009765625,
+      "atmosphere" : null,
+      "clouds" : null,
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "moon752",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [],
+      "seaLevelGravity" : 0.12812384963035583,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 29089086.0,
+      "y" : 10942862.0,
+      "z" : 84312.509999999995
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 4096,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 1632.1510000000001,
+      "size" : 4096,
+      "voxelLod0" : 5
+   }
+}

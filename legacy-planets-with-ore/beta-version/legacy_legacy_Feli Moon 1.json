@@ -1,0 +1,66 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "abc2ce79ff82e7a9e7b4d7ddde9cbe9db42203cc",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 50,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Feli Moon 1",
+      "uniqueIdentifier" : "legacy/legacy_Feli Moon 1"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 14000.0,
+      "atmosphere" : null,
+      "clouds" : null,
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "Feli Moon 1",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "CopperOre",
+         "IronOre",
+         "NiobiumOre",
+         "SiliconOre",
+         "SulfurOre"
+      ],
+      "seaLevelGravity" : 1.0989999771118164,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : -43919225.780000001,
+      "y" : 22244650.699999999,
+      "z" : -48878770.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 32768,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 14000.0,
+      "size" : 32768,
+      "voxelLod0" : 5
+   }
+}

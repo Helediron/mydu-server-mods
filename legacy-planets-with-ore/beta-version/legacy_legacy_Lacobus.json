@@ -1,0 +1,130 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 100,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Lacobus",
+      "uniqueIdentifier" : "legacy/legacy_Lacobus"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 55650.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 55600.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 2.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 0.66600000858306885,
+            "y" : 0.66600000858306885,
+            "z" : 0.66600000858306885
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 500.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 33.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 2.0,
+         "rayleighMeanHeight" : 800.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.20000000298023224,
+            "y" : 0.20000000298023224,
+            "z" : 0.30000001192092896
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 1.0,
+         "cloudsCoverage" : 0.57999998331069946,
+         "cloudsExtinctionCoefficient" : 0.61100000143051147,
+         "cloudsGlobalDensity" : 0.15000000596046448,
+         "cloudsInnerRadiusDegree" : 0.4050000011920929,
+         "cloudsOuterRadiusDegree" : 0.56999999284744263,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 200.0,
+         "curleySampleCoefficient" : 10.0,
+         "heyneyGreinsteinMixCoefficient" : 0.5,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.20000000298023224,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.99000000953674316,
+         "highResSampleCoefficient" : 500.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 25.0,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 64.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 5.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 4.6389999389648438
+      },
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "Ice",
+         "classification" : "Psychroplanet",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Lacobus",
+         "habitabilityClass" : "Average",
+         "information" : "Lacobus is an ice planet that also features large bodies of water. The arkship geological survey reports deep oceans alongside a frozen and rough mountainous environment. Lacobus seems to feature regional geothermal activity allowing for the presence of water on the surface.",
+         "numSatellites" : 3,
+         "positionFromSun" : 10,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "GoldOre",
+         "IronOre",
+         "SiliconOre",
+         "SodiumOre",
+         "SulfurOre",
+         "TitaniumOre"
+      ],
+      "seaLevelGravity" : 4.4745001792907715,
+      "seaLevelRadius" : 55650.0,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 98800000.0,
+      "y" : -13600000.0,
+      "z" : -1000000.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 57000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}

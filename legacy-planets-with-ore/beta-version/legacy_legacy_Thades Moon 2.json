@@ -1,0 +1,65 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "abc2ce79ff82e7a9e7b4d7ddde9cbe9db42203cc",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 31,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Thades Moon 2",
+      "uniqueIdentifier" : "legacy/legacy_Thades Moon 2"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 15000.0,
+      "atmosphere" : null,
+      "clouds" : null,
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "Thades Moon 2",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "CobaltOre",
+         "IronOre",
+         "LithiumOre",
+         "SiliconOre"
+      ],
+      "seaLevelGravity" : 1.1775000095367432,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 29387810.34,
+      "y" : 10416382.6,
+      "z" : 3169.8240000000001
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 32768,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 15000.0,
+      "size" : 32768,
+      "voxelLod0" : 5
+   }
+}

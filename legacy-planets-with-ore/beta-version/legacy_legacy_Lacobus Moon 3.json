@@ -1,0 +1,58 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "abc2ce79ff82e7a9e7b4d7ddde9cbe9db42203cc",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 101,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Lacobus Moon 3",
+      "uniqueIdentifier" : "legacy/legacy_Lacobus Moon 3"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 15000.0,
+      "atmosphere" : null,
+      "clouds" : null,
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "Lacobus Moon 3",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [ "AluminiumOre", "CarbonOre", "IronOre", "SiliconOre" ],
+      "seaLevelGravity" : 1.1775000095367432,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 98888906.170000002,
+      "y" : -13967307.060000001,
+      "z" : -663973.28000000003
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 32768,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 15000.0,
+      "size" : 32768,
+      "voxelLod0" : 5
+   }
+}

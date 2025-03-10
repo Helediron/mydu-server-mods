@@ -1,0 +1,130 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 110,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Symeon",
+      "uniqueIdentifier" : "legacy/legacy_Symeon"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 49050.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 49000.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 3.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 0.66600000858306885,
+            "y" : 0.66600000858306885,
+            "z" : 0.66600000858306885
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 300.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 33.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 1.0,
+         "rayleighMeanHeight" : 500.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.0,
+            "y" : 0.0,
+            "z" : 0.0
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 1.0,
+         "cloudsCoverage" : 0.60000002384185791,
+         "cloudsExtinctionCoefficient" : 0.66100001335144043,
+         "cloudsGlobalDensity" : 0.15000000596046448,
+         "cloudsInnerRadiusDegree" : 0.22499999403953552,
+         "cloudsOuterRadiusDegree" : 0.40000000596046448,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 200.0,
+         "curleySampleCoefficient" : 10.0,
+         "heyneyGreinsteinMixCoefficient" : 0.5,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.20000000298023224,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.99000000953674316,
+         "highResSampleCoefficient" : 500.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 25.0,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 64.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 5.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 4.6389999389648438
+      },
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "Ice, Desert",
+         "classification" : "Hybrid",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Symeon",
+         "habitabilityClass" : "High",
+         "information" : "Symeon is an ice planet mysteriously split at the equator by a band of solid desert. Exactly how this phenomenon is possible is unclear but some sort of weather anomaly may be responsible. The arkship geological survey reports a fairly diverse mix of flat-lands alongside mountainous formations.",
+         "numSatellites" : 0,
+         "positionFromSun" : 11,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "ChromiumOre",
+         "CobaltOre",
+         "IronOre",
+         "NickelOre",
+         "SiliconOre",
+         "VanadiumOre"
+      ],
+      "seaLevelGravity" : 3.8464999198913574,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 14100000.0,
+      "y" : -85700000.0,
+      "z" : -1000000.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 49000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}

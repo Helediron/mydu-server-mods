@@ -1,0 +1,129 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 6,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Sicari",
+      "uniqueIdentifier" : "legacy/legacy_Sicari"
+   },
+   "kind" : "planet",
+   "pipeline" : "AXMAAPgDeyJiYW5rRW50cmllcyI6W10sEQAyUmF3FAAxbm9kHwDzFnsiZGVidWdOYW1lIjoiTm9pc2UiLCJpbnB1dENvbm5lY3Rpb25IAGhtb2R1bGUrAPMORjNQIiwicGFyYW1ldGVycyI6eyJhIjoxLjAsImIIABNjCAAUZAgAmmFtcCI6MC44MAEAEjQbAFNTY2FsZSsABAgAoGxhY3VuYXJpdHkZACA5Nr8A8Alpc2VUeXBlIjoiam9yZGFuIiwib2N0YXbWAKAxMSwib2Zmc2V0aQDhNSwicGVyc2lzdGVuY2USABo5AQBCOCwic3cAOjIuNZYA8QQxZS0wNSwic2VlZCI6MCwid2FyvgArMTQoADp9fSxMAY9IZWF2aXNpZFABBHF7ImZyb21NUwEBWgAADwBjT3V0cHV0YgFFdmFsdT0ACRQAHH2NAQhsAAqOASBlbrgAKi4xrgAgMDHkAfEDdmVyc2UiOmZhbHNlLCJzdGFyMAEbMNsALTA43AB/UG9seW5vbSoCAwraAB8x2gArBmoACtgAEGHIAQJmAjswLjC1ASEwM3cCASEAAf8AAkwCPTAuMMoACDoBD/YCAArMAB8wzAArCGwACs4ABKYBGjbJABAxlAAPpgEEKjE0LAAdMtsAP0FkZKEBER8y1QAUYGdyaWRBIuYCAKoCBLkCHzM+ABgeQrkCAKQAAFMACIUEBvMBD5EBDh80fgAUAksDDX4ABmoACo8BCV0CHjI7AxFjTAIPXAKcODg4MwEAEDVfAQ9cAgUaNiwAHTZcAgY6AQ+kAQ4fNqQBUAyyBB8ypAEWAIECD8UAEB81xQAUDyUDAx83PgAYDyUDFAhMBA+DAQ4PuARNRzIxMTYBABA3kwAPWwIFGjkrAB8xWwIpHzlYARQP/wNjD1sCFB84xQAUD1sCAx8x3AEVAD8AD1wCohc3WgJPNjY3M10CCBkyXAI/NjczXQIpHzEZBxUPXgIpD7oIKA9fAhQADAsAsQcPWwoOACECDuAHHzHhB2sP3gIVD4QBJxAyyQcP0QcUD3MBFQ+XCBUPcwEED20GGQ/TAxQPsAcYHzGxB08hNTKTCw92ARTfQ29uc3RNYXRlcmlhbNIKAwwQDQwzAArfCY9kZWYiOiIxIh4EKQ+ZAk8RLUYPDyQBFA+5D5AcMkoLHzLHDw0fNMYPcA85AxgfMhQCTzswLjbrChExIwJaLTEuNjjUEAP6DiozNBcAMTgsIgMRGzONAR8xDQMpHzLlD09YNTAuMTeKDQ/jCxcPHAPCHzccA5wPRwgVD8kHJw8cAwgaNWwUHzEcA1oPDQgVD/oAJw8cAyg/U3ViUgcDCuYRHzIMCxUP0ggDHzLSCCwApgAPJhIoHzLSCEcwNzI1QAoA7BYfMNQIcB4y1AjfQmlvbWVDb21iaW5lcuwBER8xVg8VjXNlbGVjdG9yFBQfMtMOLA8/ABkPAAsABCsKFFOgAAwAClJleHRlbusWKDA2FBPwAzMyOTcsInRocmVzaG9sZCI6LVQOGTNpFR04KQcHaAAPihEOD10BMA9NEhkP0A0ADz8AGQ9dAQAH7QAK9xkBwxYBswoGSRgNKwEPiwfCD6cKnB8zrQlPD4sHCA+nCmkfM8YGFQ+LB2IPHAPCD6cKnB8zrQlPDxwDCA+nCmkfM6MJFQ8cA2IAAQoPXgcQHzNmDBUPpwoDHzMoChUAPwAPHAcBD6cKKx8zmwcVD4MBHyExNZ0KQWIiOjewCg9WEhQMRxMP3wgAD3oTIR8zpgowD2wRFQ+lCgYfM+cKFQDtAQ5ICR8yPwAZDywCAA+lCjgADCAaM/oYDXkJB7cJD8UBAArtDQ9bAS8PwQsZDlsBHzOBABUAmgEPWwEAB+wAD6MKIASZAV9SZW1hcDANER80rwAVPmhkZgEhDG8ACrIA8AVtYXBwaW5nIjpbWzEsIkNhbnlvbsMlRF0sWzIQAMRQZWJibGVzIl0sWzMUAI1Sb2NrcyJdXQgCxUhERlNwYXRpYWxpelwkCuklCg0CHzQuChU9Z2VvCQ4fNHEJAQAHAQOGAgPVJD1tYXQ7AB81OwAWLjNEVgEK5wAMOxBfQmxvYnPbAREfNdsBFRBiZQ8dc8UADz0BFm5oZWlnaHTIAJBWb3hlbENhcnYFAgwdAkJkYXRhGgJwW3siYmlhcwsEKzAx8RWgOSwiZWxlbWVudMYnlnsiY2VudGVyRRMAcF0sImNsdXNfGQBqAgMOJkFkZW5zcCewMC4wMDA3MTQyODUGAAJOFhA1IQCycHRoTWVhbiI6LTJfBgETAFFWYXJpYWgnMjE1Nh4RWmZpcnN0cgBCZ3JvddoCA3AAZ2lubmVyRHUAcSwibGV2ZWygJPEAbWFjcm9NaWNyb1JhdGlvVSYBFABjUmFkaXVzFQAB4wahbWF4V2lkdGgiOukGM21pbg8AIzAuvAAGAgADgBjTQW1wTXVsdGlwbGllcsQOPG91dI8AARMAH02KAAAGGQAOjwARcqEAMCI6NtEAAWQoZk1heCI6Mw8AIGluGxmaMCwic2Vjb25kJwEFdyhEc2hhcHopMGJsbw4JMHR5cOwoUFt7ImlkawOyOTQ5NjcyOTUsIm7NKYBDYXJib25PcugD8gB0aW50Q29sb3IiOm51bGwRADJIU1YPACB9XSMDDxoC/9gvSXIYAv//BV9TaWxpYxsC//8Fn0FsdW1pbml1bVAGTAFlCAFrCBEwAQATM1cIA2oIEjZmGQtqCCIyNRcAD2kI/2ZPaHJvbRsCSiA1LnwKABcCEjO/CRI4lzEBCAIDGwISOQQCARMABoUKD4QK/21vU3VsZnVyNARHMzUuMzIEFjYZAhM2BgIDGQIvMTIaAgIBEzMAiAsPNgT/ZV9TY2FuZDYEFwYODaB9XV1dLCJkaWdnFg8EvzQzbWF4PA0wTE9E3gEBEwABDAAdMgcRsVZlcnRleEV4dHJhwh4AgA4N8jYLCREP1RIBDswQABIADWgyDG8AAG4NCPIyYUNvbnRvdYAPD4oAEQ+rFwIB0gBFR3JpZNoQA14RCBoADZoAB3oADJUABigSA1gBBVkADzASCg8nAQEArAGFZWRTcGhlcmVGAAOfAAocAACFAACuLARfNB80ZxUBBdAQAy0BA0oABRcADUUAD8QSFW9zdXJmYWMpNAAPDAEAAGUACMQBC6sRD1ACDw9cEl0LWgEfNSwZAQC+AgO8AANVAQASAA02AgvsAAq0FA+XElcRMyIKBgIAANglABkKAvgFAQ8SCw4IARQAD/AFKxA2WAQPjxIgAeQRBo8SASohAcY6D38SUgH5AAeAEgEdEwIQAACBEhIzIAAPghIVMHdvcvw5D4ISDmJlbXB0eSJtEg9+EgoH3QUfLMwUTA81Av/DEV0RGQ8HF00POwL/ww9wBP//KB8zcAT/////Xg/yEBseMelEwERlY29yc0dlbmVyYbUvA+cND8wPCR8xzA8BAn0mAz4AAyUOD/8gRQ60AA9rDgIAHAFFYXRhMg0hBQoQAMUR9QFhbGxvd1JvdFgiOnRydWUsEQAcWREAFFoRAAgQIQIvHwgPIQRnDgQcAAbMIAIsAAO4IBAx4A3yAXJtYWxNb2RlIjoiZnJlZSASABQifA0ADCAgMi5gSAB/SAGLDQEZDjBzbG/bSBJ7CQASRcRHACcAABgAUEVuZEZhUwAGEwAVU7xHAzwAAREABCYALzB9rA0QADMkBeUZMDAwMV4RDzYgDB8seyAGAE0AAn8gD0oAMS9JckgAMwPfHA+TABMhXSxUE1VpY2FsT0tKAS8KBEACD1ECNiAwMmECD1ICwgQbGj8wMDEIEBAPcwEDAGMqY2Fza1NsbxpLAGcDAAUWDdcVD7AqRC0xImoAYFNtYWxsIAgRACgDD+0TDg9JJl4L7RMfNNguAQDbEwO8AAPIBQASAACGAQnpTQ/tE3QUMOkZIjcw6hkTOTUDAxoeD4Qmgg/1E2oD1RMBWgYAaQYbMfUTHzH1E0MC+AUP8xtHAZEoDw0C/5YPaiZQDwsC/5YDfgkPGQT/9QVrDA8QAkwDty4ANwgBKRwEawsDNggPUCaBDzUI4gMoDA8OAkcgMi4/JgAKAgMqJB85QyaTDw4C4Q82Jk1CMi42Nw4CETkVBAHmWQ82JpIPDgLiDykmaD9CaWfmD5cfNegkAQDUDw/mD//KEjbGDwXmDwj2DwBQFgJrUQ9dNhYA0xIAqhMPXTZyD9sN/x8PDQJkD+YP/4IPCwJkD+YP/4UPDgJkD+YP/4YPDwJkBA4cD+YP/30PDgJkD+YP/4UPDgJlD+YPaBJT+DMfIBlGhwzQHw+9M68N+mIZMdAfAdYOARUjBsw7Af0SD74zKx8yvjMkATsfBr4zD01GegEXAQbMMwJBJg/LMxUPTUZADxcmBw8oDhYPQwAHD2AMGQ9GAAcPmAodB6A0D4spHSAyfVIjEW/ZbwKRKAngOA/0TwEFvygEOAAC6XAQMnM4CT0AD/ATAQSgKQJyAAI6AB0zOgAPXksHCDgAHTc4AA+POQwIPQAdOT0AD08qAQKfFAg4AB00OAAPKjkJCDoAYDEwfV19Cg==",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 51100.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 50449.87109375,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 2.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 0.66600000000000004,
+            "y" : 0.66600000000000004,
+            "z" : 0.66600000000000004
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 400.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 40.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 3.0,
+         "rayleighMeanHeight" : 600.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.0,
+            "y" : 0.0,
+            "z" : 0.0
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 1.0,
+         "cloudsCoverage" : 0.79000002145767212,
+         "cloudsExtinctionCoefficient" : 0.6600000262260437,
+         "cloudsGlobalDensity" : 0.10000000149011612,
+         "cloudsInnerRadiusDegree" : 0.38499999046325684,
+         "cloudsOuterRadiusDegree" : 0.67000001668930054,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 200.0,
+         "curleySampleCoefficient" : 10.0,
+         "heyneyGreinsteinMixCoefficient" : 0.5,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.20000000298023224,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.99000000953674316,
+         "highResSampleCoefficient" : 500.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 25.0,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 64.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 5.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 20.0
+      },
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "Desert",
+         "classification" : "Mesoplanet",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Sicari",
+         "habitabilityClass" : "Average",
+         "information" : "Sicari is a typical desert planet; it has survived for millenniums and will continue to endure. While not the most habitable of environments it remains a relatively untouched and livable planet of the Alioth sector. The arkship geological survey reports large flatlands alongside steep plateaus.",
+         "numSatellites" : 0,
+         "positionFromSun" : 6,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "ChromiumOre",
+         "IronOre",
+         "ScandiumOre",
+         "SiliconOre",
+         "SulfurOre"
+      ],
+      "seaLevelGravity" : 4.0034999847412109,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 52700000.0,
+      "y" : 27100000.0,
+      "z" : 52000000.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 51000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}

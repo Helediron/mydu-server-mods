@@ -1,0 +1,131 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 9,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Jago",
+      "uniqueIdentifier" : "legacy/legacy_Jago"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 61590.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 61500.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : false,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 2.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 0.66600000858306885,
+            "y" : 0.66600000858306885,
+            "z" : 0.66600000858306885
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 400.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 33.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 1.0,
+         "rayleighMeanHeight" : 700.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.20000000298023224,
+            "y" : 0.20000000298023224,
+            "z" : 0.30000001192092896
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 2.0,
+         "cloudsCoverage" : 0.44999998807907104,
+         "cloudsExtinctionCoefficient" : 0.89999997615814209,
+         "cloudsGlobalDensity" : 0.20000000298023224,
+         "cloudsInnerRadiusDegree" : 0.15000000596046448,
+         "cloudsOuterRadiusDegree" : 0.25,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 150.0,
+         "curleySampleCoefficient" : 20.0,
+         "heyneyGreinsteinMixCoefficient" : 0.5,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.5,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.80000001192092896,
+         "highResSampleCoefficient" : 150.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 20.0,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 64.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 10.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 15.399999618530273
+      },
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "Water",
+         "classification" : "Mesoplanet",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Jago",
+         "habitabilityClass" : "Very High",
+         "information" : "Jago is a water planet. The large majority of the planet's surface is covered by large oceans dotted by small areas of landmass across the planet. The arkship geological survey reports deep seas across the majority of the planet with sub 15 percent coverage of solid ground.",
+         "numSatellites" : 0,
+         "positionFromSun" : 9,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CalciumOre",
+         "CarbonOre",
+         "ChromiumOre",
+         "IronOre",
+         "LithiumOre",
+         "NiobiumOre",
+         "ScandiumOre",
+         "SiliconOre"
+      ],
+      "seaLevelGravity" : 4.9454998970031738,
+      "seaLevelRadius" : 61590.0,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : -94200000.0,
+      "y" : 12700000.0,
+      "z" : -3700000.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 63000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}

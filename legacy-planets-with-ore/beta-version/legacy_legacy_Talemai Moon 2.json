@@ -1,0 +1,65 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "abc2ce79ff82e7a9e7b4d7ddde9cbe9db42203cc",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 40,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Talemai Moon 2",
+      "uniqueIdentifier" : "legacy/legacy_Talemai Moon 2"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 12000.0,
+      "atmosphere" : null,
+      "clouds" : null,
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "Talemai Moon 2",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "IronOre",
+         "NickelOre",
+         "ScandiumOre",
+         "SiliconOre"
+      ],
+      "seaLevelGravity" : 0.94199997186660767,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : -13519474.34,
+      "y" : 55577940.490000002,
+      "z" : 753452.53000000003
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 32768,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 12000.0,
+      "size" : 32768,
+      "voxelLod0" : 5
+   }
+}

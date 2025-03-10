@@ -1,0 +1,65 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "abc2ce79ff82e7a9e7b4d7ddde9cbe9db42203cc",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 122,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Ion Moon 2",
+      "uniqueIdentifier" : "legacy/legacy_Ion Moon 2"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 15000.0,
+      "atmosphere" : null,
+      "clouds" : null,
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "Ion Moon 2",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "CopperOre",
+         "IronOre",
+         "SiliconOre",
+         "SulfurOre"
+      ],
+      "seaLevelGravity" : 1.1775000095367432,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 2979040.1699999999,
+      "y" : -99291392.730000004,
+      "z" : -1394866.03
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 32768,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 15000.0,
+      "size" : 32768,
+      "voxelLod0" : 5
+   }
+}

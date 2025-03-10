@@ -1,0 +1,65 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "abc2ce79ff82e7a9e7b4d7ddde9cbe9db42203cc",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 12,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Madis Moon 3",
+      "uniqueIdentifier" : "legacy/legacy_Madis Moon 3"
+   },
+   "kind" : "planet",
+   "pipeline" : "dEIAAPEHeyJiYW5rRW50cmllcyI6W10sIm5vZAsA8xZ7ImRlYnVnTmFtZSI6Ik5vaXNlIiwiaW5wdXRDb25uZWN0aW9uNABobW9kdWxlKwDxDkYzUCIsInBhcmFtZXRlcnMiOnsiYSI6MC4wLCJiCAAqODkBAEA3LCJjGQA5MTcwAQDwAjEsImQiOi0wLjc1LCJkYW1wJQADCwCAU2NhbGUiOjFWAPAFZSI6LTEuMDQsImxhY3VuYXJpdHkbABA40wDwCmlzZVR5cGUiOiJwb2x5bm9tIiwib2N0YXbrAKMxMSwib2Zmc2V0WwCzcGVyc2lzdGVuY2USABJzaQApMi6bAPIHMDAyZS0wNSwic2VlZCI6MTIsIndhcqEAOn19LEIBj0hlYXZpc2lkRgEEcXsiZnJvbU1JAUEiOjAsDwBjT3V0cHV0WAFFdmFsdT0ACRQAHH2DAQhsAAqEATBlbmTTACoxNH0BEDnaAfEEdmVyc2UiOmZhbHNlLCJzdGFydHkBKzAyLQAdOd0AFVBWAQ8hAgAK2wAfMdsAKwZqAArZAAddAgEPAgFMAhEwPAIBCAABygEfMLkAKR8yuQBOMTMwMKwAD7wAFA+UA/McOJQDHzeUA0QfNAACKw+UA4kfNdsAKw+UA2cfNrkATi83NZMDGT9BZGQlBwMKBAUfM7cAFGBncmlkQSJKBggdBh83PgAYHkIdBgCkAABTAAjfB99Db25zdE1hdGVyaWFswgADDGQGDDMACo8FjWRlZiI6IjEicQUEZQBfUmVtYXBqAAMK7gAfOe4AFD5oZGbsAAxuAAqRCP0YbWFwcGluZyI6W1sxLCJTYW5kTWVkaXVtRHJ5UmF3Q3JhY2tzIl1dxADFSERGU3BhdGlhbGl6kgcKFQkKxAAfOMQAFD1nZW/uAR8xDAgBAO0AA2wHAwoIPW1hdDsAHzI7ABYuM0Q8AQrmAAwyAl9CbG9ic8ABOW1iaW9tZXPEAA87ARVuaGVpZ2h0xgCQVm94ZWxDYXJ26QEMAQJCZGF0Yf4BcVt7ImJpYXMtCA8dCQBwZWxlbWVudO8KlnsiY2VudGVyRRMAcF0sImNsdXM+AwBOAgNBCUFkZW5zhAoQMKIGYDQyODU3MQYAA00JACEAsnB0aE1lYW4iOi0z+gcBEwBRVmFyaWF8CjIyMjUYAFpmaXJzdHIAQmdyb3W+AgNwAGdpbm5lckR1AHEsImxldmVsugjxAG1hY3JvTWljcm9SYXRpb4cJARQAY1JhZGl1cxUAAesEsG1heFdpZHRoIjo1RAAzbWluDwAtMC4JCgNcC9NBbXBNdWx0aXBsaWVygQk8b3V0jwABEwAfTYoAAAYZAA6PABFyoQAwIjo2jQABiAtmTWF4IjozDwAhaW6aC4osInNlY29uZCcBApsLdDAsInNoYXCjDKBibG9iIiwidHlwAAzyBVt7ImlkIjo0Mjk0OTY3Mjk1LCJu9gyAQ2FyYm9uT3LlA/ACdGludENvbG9yIjpudWxsfV0SAw8LAv/YL0lyCQL/9V9TaWxpYwwC//WfQWx1bWluaXVtIwY4MjEuMCgIYzcxZS0wNhQIAycIEjgPCAsnCCMxMDkQDycI/2WPRmx1b3JpbmUGAjhQNi42OTYuChE33QECahQTOPoBAw0CLzExDgICEDQvAAAPCQ8OAv9lT1RpdGEUBAkGlQqgfV1dXSwiZGlnZ50MBHkVM21heMMKMExPRN0DARMAAQwAHTKLDv8AVmVydGV4RXh0cmFjdG9ykQ0RHzE1EQEOUQ4AEgANPBAMbwAABAsLSBAxdG91Bw0AkQwNLBgKFw8fMQgRAgHSAEVHcmlkXw4D4w4IGgANmgAHegAMlQAGrA8DWAEFWQAPtA8JDycBAgCsAYVlZFNwaGVyZUYAA58AChwAAIUACLURHzG2EQEFVw4DLQEDSgAFFwAMRQAPDQ8Vb3N1cmZhYxkYAA8LAQAAZAAIwwELMQ8PxQEOD6ARFQ/gDzQLVwEfMk8YAQC7AgO6AANSAQASAA0zAgvqAAocEg8bEFcQM7AFBwIAGTHmBQGTDwvwBwEUAA/eBSsQNlUEDxMQIBAyWQYGExABaxkBXxsPAxBSAfkABwQQAaEQAhAAAAUQEjMgAA8GEBVPd29ybQYQEVBlbXB0eSkADQIQD8sFKB4xjBrPRGVjb3JzR2VuZXJhzAUVDxIEFQ9+AzQMBRYOswAPRgMCAOYGRWF0YTJsEwXiBAATBvUBYWxsb3dSb3RYIjp0cnVlLBEAHFkRABRaEQAIbxNAbnVsbCMDBm4TEDIPABBwwhICHAAGKxMCEAADFxMQMbsC8gFybWFsTW9kZSI6ImZyZWUgEgAUIlcCAGsSIDIu4x0AAh4BZgIB9AIwc2xvTx4SewkAEkVWHQAnAAAYAFBFbmRGYVMABhMAElNOHQKhAgAkAAERAAQmAC8wfY0SEEVSb2NrcQwwMDAxNgYMlRIfLMsSBgA+AALPEg87ACIvSXI5ACQDLw8PdQAEIV0s8AdVaWNhbE+CHxEwqgVjYXNrU2xv/R4AuAEALgkNAAkMhhgPrwYADLQCDDMAC7ICD7kYBWBTbWFsbCA0BAB5AQ9oAAAKmQYfOfMXFA+ZAzQLFwcAiyAAfggJQSAABQcDugAPFweQITAyLhcADA8PMheXDx8HagP/BgGpBAC4BBsxHwcSMX4EDx8HPQJWBA/8DjgBMBkP/gH/lgAZBg/8AT0C+BAABgAP+gP/jAPcBw//AT0P+wP/lgWNCg8BAjgzNS4z+wMDBypTNWUtMDfQCw8FF4kP+gfhD/gWQFEzLjM0OAEEEjYTER8z+BaVDwEC4Q/rFlo/Qmlnfw2WD/4NAQ9/Df/OEjZfDQV/DQiPDQA4EhIyIAAPfw3/xQ/+AWQPlyT1D34Hag/8AWQPfw3/dg//AWQPfw3/eA8BAmQPfw3//10SU1QiHyD5MYUMAhsPGSKvIjA1AxEFAgAPGiIPAQcJDxoiKx8yGiIkAW0aBhoiDy0yegEXAQYoIgLCHw+JDRUPLTIxD5gfBw/BCwcPNAAHD/kJCg83AAcPMQgOD88iKCAyfbUfEW+wPgLWIQB/HgTPPg/pJxACOwACpT8QMJQmCUAAD6E6AQVEIgo9ABwyPQAPIyMJCHYAHDM5AAB6KQCGAA9FHwAIOAAdNzgAD+snDAg9AB05PQAPFCkBQW1ldGGRJgo9AB0xPQAPpDwBoG9jdHJlZU1lc2j1QAGiAQJnAR04PwAPGioHCLQAHDQ4AA/uEgEErkAIOQBgMTB9XX0K",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 15000.0,
+      "atmosphere" : null,
+      "clouds" : null,
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "Madis Moon 3",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "FluorineOre",
+         "IronOre",
+         "SiliconOre",
+         "TitaniumOre"
+      ],
+      "seaLevelGravity" : 1.1775000095367432,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 17504233.440000001,
+      "y" : 22168342.899999999,
+      "z" : -326370.21999999997
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 32768,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 15000.0,
+      "size" : 32768,
+      "voxelLod0" : 5
+   }
+}

@@ -1,0 +1,129 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 4,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Talemai",
+      "uniqueIdentifier" : "legacy/legacy_Talemai"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 57500.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 57400.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 2.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 0.66600000000000004,
+            "y" : 0.66600000000000004,
+            "z" : 0.66600000000000004
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 300.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 40.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 2.0,
+         "rayleighMeanHeight" : 700.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.20000000298023224,
+            "y" : 0.20000000298023224,
+            "z" : 0.30000001192092896
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 2.0,
+         "cloudsCoverage" : 0.43000000715255737,
+         "cloudsExtinctionCoefficient" : 0.89999997615814209,
+         "cloudsGlobalDensity" : 0.2800000011920929,
+         "cloudsInnerRadiusDegree" : 0.25,
+         "cloudsOuterRadiusDegree" : 0.52999997138977051,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 200.0,
+         "curleySampleCoefficient" : 7.440000057220459,
+         "heyneyGreinsteinMixCoefficient" : 0.5,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.5,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.80000001192092896,
+         "highResSampleCoefficient" : 70.0,
+         "lightStep" : 1.0,
+         "lowResSampleCoefficient" : 1.5,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 64.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 10.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 15.399999618530273
+      },
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "Barren",
+         "classification" : "Psychroplanet",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Talemai",
+         "habitabilityClass" : "Average",
+         "information" : "Talemai is a planet in the final stages of an Ice Age. It seems likely that the planet was thrown into tumult by a cataclysmic volcanic event which resulted in its current state. The arkship geological survey reports large mountainous regions across the entire planet.",
+         "numSatellites" : 3,
+         "positionFromSun" : 4,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CalciumOre",
+         "CarbonOre",
+         "IronOre",
+         "LithiumOre",
+         "SiliconOre",
+         "SodiumOre"
+      ],
+      "seaLevelGravity" : 4.5529999732971191,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : -13300000.0,
+      "y" : 55700000.0,
+      "z" : 400000.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 58000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}

@@ -1,0 +1,121 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 26,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Sanctuary",
+      "uniqueIdentifier" : "legacy/Sanctuary3"
+   },
+   "kind" : "planet",
+   "pipeline" : "qewAAPgDeyJiYW5rRW50cmllcyI6W10sEQAyUmF3FAAxbm9kHwDwEXsiZGVidWdOYW1lIjoiIiwiaW5wdXRDb25uZWN0aW9uQwDxAXsiZnJvbU1vZHVsZSI6MSwPAGNPdXRwdXQ4AIRlbGVtZW50c0AADBcAKn0sRAAvNDRFAABbdmFsdWVCANFzdXJmYWNlIn1dLCJtgQADWwC0U3BhdGlhbGl6ZUV8AABlAA/NAB0PiQAWYWhlaWdodGQACA0BLzQwyQAUbmJpb21lc8gA+ipEZWNvcnNHZW5lcmF0b3IiLCJwYXJhbWV0ZXJzIjp7ImRhdGEiOltbNixbeyJiaWFzIjowLjAxNDkBALIsImVkaXRvcktleccBBZIBAL8BZWNlbnRlcikBARUC8QtjbHVzdGVyaW5nIjpmYWxzZSwiZGVuc2l0eWIAeiwiZmlyc3Q0AMVmb2xsb3dOb3JtYWw2AFhncm91cEcAaWlubmVyREwAtWludmVydFNsb3BlOADwBWxldmVsIjotMSwibG9ja1VwVmVjAgEEjgDxAG1hY3JvTWljcm9SYXRpb3kCARQAY1JhZGl1cxUAAasAPG91dHIAARMAH01DAAAGGQAOSAARcloAA1UAsHNjYWxlTWF4IjoxZAACDwAkaW4PAFplY29uZB8BonNlZWQiOjAsInPpAENudWxsDQBUQ29lZmZZAAAeAMBDdXR0b2ZmV2lkdGgYACo4MAEAEzQ5AFVTdGFydCYAGjIlAHEwMSwidHlwyQMWXSMDkElkRm9yU2lnbqYBAGABCJkAF3QcABEi0AIPVgL///////////9Lb11dLFsxM7UL//////////////+rHzK1C///////////////rB8zHyP///////////9QAMkgLzU5ySD/////ngCzBC83MbME/////6IfOLME/////58POjj//0VBXV1dLPU8FTL2PAnLPBBhgjxFUm90WEg8BBIAHVkSAHpaIjp0cnVl7DwClTsF6zwB3DswZGVwhjsCGwAG0DwCEAADqDwQMDQ/APk8wk1vZGUiOiJmcmVlIBIAFCIePAItPBIxpTuUMjM4NDE4NTc5HgAAPDwyMC44uT2QNzYxNTgxNDIwHwAAETwEbwAE0DvyBHsiaWQiOjQyOTQ5NjcyOTUsIm6kP/UPbWVhZG93XzAxX2dyYXNz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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 83400.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 83350.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 250.0,
+         "globalIntensity" : 15.0,
+         "mieCustomCoeff" : 0.20000000298023224,
+         "mieCustomColor" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 400.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 10.0,
+         "rayleighCustomColor" : {
+            "x" : 1.0,
+            "y" : 0.40000000000000002,
+            "z" : 0.17499999999999999
+         },
+         "rayleighExpFactor" : 1.0,
+         "rayleighMeanHeight" : 500.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.0,
+            "y" : 0.0,
+            "z" : 0.0
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 1.0,
+         "cloudsCoverage" : 0.63599997758865356,
+         "cloudsExtinctionCoefficient" : 0.66100001335144043,
+         "cloudsGlobalDensity" : 0.42800000309944153,
+         "cloudsInnerRadiusDegree" : 0.14800000190734863,
+         "cloudsOuterRadiusDegree" : 0.26499998569488525,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 200.0,
+         "curleySampleCoefficient" : 10.0,
+         "heyneyGreinsteinMixCoefficient" : 0.49500000476837158,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.48500001430511475,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.289000004529953,
+         "highResSampleCoefficient" : 300.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 15.0,
+         "maxIntegrationSteps" : 256.0,
+         "minIntegrationSteps" : 128.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 5.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 4.6389999389648438
+      },
+      "decorAssetList" : [],
+      "description" : {
+         "biosphere" : "",
+         "classification" : "",
+         "discoveredBy" : "",
+         "displayName" : "Sanctuary",
+         "habitabilityClass" : "",
+         "information" : "",
+         "numSatellites" : 0,
+         "positionFromSun" : 0,
+         "type" : ""
+      },
+      "isSanctuary" : true,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [],
+      "seaLevelGravity" : 9.8100004196166992,
+      "seaLevelRadius" : 83400.0,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : -1535906.5268399999,
+      "y" : 431583.31663299998,
+      "z" : -416146.95449899998
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 262144,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : 88443.026803763627,
+      "minRadius" : 78443.026803763627,
+      "radius" : 83443.026803763627,
+      "size" : 262144,
+      "voxelLod0" : 5
+   }
+}

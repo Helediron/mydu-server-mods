@@ -1,0 +1,142 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 3,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Thades",
+      "uniqueIdentifier" : "legacy/legacy_Thades"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 49000.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 49000.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 5.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 1.0,
+            "y" : 0.33300000000000002,
+            "z" : 0.33300000000000002
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 1000.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 40.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 1.0,
+         "rayleighMeanHeight" : 2500.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.20000000298023224,
+            "y" : 0.20000000298023224,
+            "z" : 0.30000001192092896
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 1.0,
+         "cloudsCoverage" : 0.5,
+         "cloudsExtinctionCoefficient" : 0.66100001335144043,
+         "cloudsGlobalDensity" : 0.10000000149011612,
+         "cloudsInnerRadiusDegree" : 0.43500000238418579,
+         "cloudsOuterRadiusDegree" : 0.63999998569488525,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 200.0,
+         "curleySampleCoefficient" : 10.0,
+         "heyneyGreinsteinMixCoefficient" : 0.5,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.20000000298023224,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.99000000953674316,
+         "highResSampleCoefficient" : 300.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 10.0,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 120.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 5.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 4.6389999389648438
+      },
+      "decorAssetList" : [
+         "desert_01_roc_med_10",
+         "desert_01_roc_med_11",
+         "desert_01_roc_med_12",
+         "desert_01_roc_med_13",
+         "desert_01_roc_med_14",
+         "desert_01_roc_med_15",
+         "desert_01_roc_med_16",
+         "desert_01_roc_med_17",
+         "desert_01_roc_med_18",
+         "desert_01_roc_med_19",
+         "desert_01_roc_med_20",
+         "desert_01_roc_med_21",
+         "desert_01_roc_med_22"
+      ],
+      "description" : {
+         "biosphere" : "Desert",
+         "classification" : "Thermoplanet",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Thades",
+         "habitabilityClass" : "Low",
+         "information" : "Thades is a scorched desert planet. Perhaps it was once teaming with life but now all that remains is ash and dust. The arkship geological survey reports a rocky mountainous planet bisected by a massive unnatural ravine; something happened to this planet.",
+         "numSatellites" : 2,
+         "positionFromSun" : 3,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "ChromiumOre",
+         "IronOre",
+         "SiliconOre",
+         "SulfurOre"
+      ],
+      "seaLevelGravity" : 4.8670001029968262,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 29100000.0,
+      "y" : 10800000.0,
+      "z" : 0.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 62000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}

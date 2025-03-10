@@ -1,0 +1,151 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 1,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Madis",
+      "uniqueIdentifier" : "legacy/legacy_Madis"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 44300.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 44500.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 2.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 1.0,
+            "y" : 0.29999999999999999,
+            "z" : 0.29999999999999999
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 300.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 40.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 2.0,
+         "rayleighMeanHeight" : 500.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.0,
+            "y" : 0.0,
+            "z" : 0.0
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 1.0,
+         "cloudsCoverage" : 0.60000002384185791,
+         "cloudsExtinctionCoefficient" : 0.66100001335144043,
+         "cloudsGlobalDensity" : 0.42800000309944153,
+         "cloudsInnerRadiusDegree" : 0.22499999403953552,
+         "cloudsOuterRadiusDegree" : 0.40000000596046448,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 200.0,
+         "curleySampleCoefficient" : 10.0,
+         "heyneyGreinsteinMixCoefficient" : 0.40000000596046448,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.33000001311302185,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.289000004529953,
+         "highResSampleCoefficient" : 300.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 15.0,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 64.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 5.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 4.6389999389648438
+      },
+      "decorAssetList" : [
+         "crater_01_roc_med_1",
+         "crater_01_roc_med_10",
+         "crater_01_roc_med_11",
+         "crater_01_roc_med_12",
+         "crater_01_roc_med_13",
+         "crater_01_roc_med_14",
+         "crater_01_roc_med_15",
+         "crater_01_roc_med_16",
+         "crater_01_roc_med_17",
+         "crater_01_roc_med_18",
+         "crater_01_roc_med_19",
+         "crater_01_roc_med_2",
+         "crater_01_roc_med_20",
+         "crater_01_roc_med_21",
+         "crater_01_roc_med_22",
+         "crater_01_roc_med_3",
+         "crater_01_roc_med_4",
+         "crater_01_roc_med_5",
+         "crater_01_roc_med_6",
+         "crater_01_roc_med_7",
+         "crater_01_roc_med_8",
+         "crater_01_roc_med_9"
+      ],
+      "description" : {
+         "biosphere" : "Barren",
+         "classification" : "hyperthermoplanet",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Madis",
+         "habitabilityClass" : "Low",
+         "information" : "Madis is a barren wasteland of a rock; it sits closest to the sun and temperatures reach extreme highs during the day. The arkship geological survey reports long rocky valleys intermittently separated by small ravines.",
+         "numSatellites" : 3,
+         "positionFromSun" : 1,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "IronOre",
+         "NickelOre",
+         "SiliconOre",
+         "SodiumOre"
+      ],
+      "seaLevelGravity" : 3.5325000286102295,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 17400000.0,
+      "y" : 22600000.0,
+      "z" : -100000.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 45000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}

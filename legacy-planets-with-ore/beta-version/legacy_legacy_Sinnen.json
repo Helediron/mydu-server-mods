@@ -1,0 +1,143 @@
+{
+   "header" : {
+      "biomeEditorGitRevision" : "9dbfb04418b04b66223ae4300483587ab1cdf33f",
+      "biomeEditorVersion" : "3",
+      "constructIdHint" : 7,
+      "parentUniqueIdentifier" : null,
+      "prettyName" : "Sinnen",
+      "uniqueIdentifier" : "legacy/legacy_Sinnen"
+   },
+   "kind" : "planet",
+   "pipeline" : "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",
+   "planetProperties" : {
+      "altitudeReferenceRadius" : 54950.0,
+      "atmosphere" : {
+         "ambiantIntensity" : 1.0,
+         "atmosphereBottomRadius" : 54800.0,
+         "fogCutoff" : 10000.0,
+         "fogDecayThreshold" : 20000.0,
+         "fogEnabled" : true,
+         "fogTint" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "fogTopHeight" : 500.0,
+         "globalIntensity" : 2.0,
+         "mieCustomCoeff" : 2.0,
+         "mieCustomColor" : {
+            "x" : 0.66600000858306885,
+            "y" : 0.66600000858306885,
+            "z" : 0.66600000858306885
+         },
+         "mieExpFactor" : 1.0,
+         "mieMeanHeight" : 400.0,
+         "miePhase" : 0.80000001192092896,
+         "rayleighCustomCoeff" : 40.0,
+         "rayleighCustomColor" : {
+            "x" : 0.17499999701976776,
+            "y" : 0.40000000596046448,
+            "z" : 1.0
+         },
+         "rayleighExpFactor" : 1.0,
+         "rayleighMeanHeight" : 750.0
+      },
+      "clouds" : {
+         "ambientBottom" : {
+            "x" : 0.0,
+            "y" : 0.0,
+            "z" : 0.0
+         },
+         "ambientTop" : {
+            "x" : 1.0,
+            "y" : 1.0,
+            "z" : 1.0
+         },
+         "cloudsBeerLawCoefficient" : 1.0,
+         "cloudsCoverage" : 0.55000001192092896,
+         "cloudsExtinctionCoefficient" : 0.66100001335144043,
+         "cloudsGlobalDensity" : 0.23000000417232513,
+         "cloudsInnerRadiusDegree" : 0.25999999046325684,
+         "cloudsOuterRadiusDegree" : 0.40000000596046448,
+         "cloudsPowderLawCoefficient" : 2.0,
+         "curleyDistortionCoefficient" : 100.0,
+         "curleySampleCoefficient" : 50.0,
+         "heyneyGreinsteinMixCoefficient" : 0.5,
+         "heyneyGreinsteinPhaseFunctionBackward" : -0.20000000298023224,
+         "heyneyGreinsteinPhaseFunctionForward" : 0.99000000953674316,
+         "highResSampleCoefficient" : 200.0,
+         "lightStep" : 20.0,
+         "lowResSampleCoefficient" : 8.0,
+         "maxIntegrationSteps" : 128.0,
+         "minIntegrationSteps" : 64.0,
+         "useDefaultParameters" : false,
+         "weatherSampleCoefficient" : 5.0,
+         "windDirectionAngle" : 20.0,
+         "windOffsetHeightCoefficient" : 20.0,
+         "windSpeed" : 4.6389999389648438
+      },
+      "decorAssetList" : [
+         "desert_01_roc_med_10",
+         "desert_01_roc_med_11",
+         "desert_01_roc_med_12",
+         "desert_01_roc_med_13",
+         "desert_01_roc_med_14",
+         "desert_01_roc_med_15",
+         "desert_01_roc_med_16",
+         "desert_01_roc_med_17",
+         "desert_01_roc_med_18",
+         "desert_01_roc_med_19",
+         "desert_01_roc_med_20",
+         "desert_01_roc_med_21",
+         "desert_01_roc_med_22"
+      ],
+      "description" : {
+         "biosphere" : "Desert",
+         "classification" : "Mesoplanet",
+         "discoveredBy" : "The Arkship Novark",
+         "displayName" : "Sinnen",
+         "habitabilityClass" : "Average",
+         "information" : "Sinnen is a an empty and rocky hell. With no atmosphere to speak of it is one of the least hospitable planets in the sector. The arkship geological survey reports mostly flatlands alongside deep ravines which look to have once been riverbeds. This planet simply looks to have dried up and died, likely from solar winds.",
+         "numSatellites" : 1,
+         "positionFromSun" : 7,
+         "type" : "Planet"
+      },
+      "isSanctuary" : false,
+      "isTutorial" : false,
+      "maxGenerationRadiusHint" : 0.0,
+      "minGenerationRadiusHint" : 0.0,
+      "ores" : [
+         "AluminiumOre",
+         "CarbonOre",
+         "CopperOre",
+         "FluorineOre",
+         "IronOre",
+         "SiliconOre",
+         "SilverOre"
+      ],
+      "seaLevelGravity" : 4.317500114440918,
+      "seaLevelRadius" : null,
+      "territoryTileSize" : 500.0
+   },
+   "position" : {
+      "x" : 58600000.0,
+      "y" : 29600000.0,
+      "z" : 58100000.0
+   },
+   "rotation" : {
+      "w" : 1.0,
+      "x" : 0.0,
+      "y" : 0.0,
+      "z" : 0.0
+   },
+   "serializationVersion" : 1,
+   "size" : 131072,
+   "voxelGeometry" : {
+      "kind" : "Octree",
+      "maxRadius" : null,
+      "minRadius" : null,
+      "radius" : 55000.0,
+      "size" : 131072,
+      "voxelLod0" : 5
+   }
+}
