@@ -738,3 +738,13 @@ struct PlayerPropertyUpdate [skipcpp]
     uint64 playerId
     bool relative
 end
+
+struct AssetManifest
+    string secretKey
+    vector<string> nqdef
+    vector<string> file
+    vector<string> sound
+    vector<string> locale
+    vector<string> elementsLoad
+    bool voxelReload
+end
