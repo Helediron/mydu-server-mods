@@ -36,6 +36,7 @@ public class MyDuMod: IMod
 {
     private IServiceProvider isp;
     private ILogger logger;
+    private IPub pub;
     public string GetName()
     {
         return "Loader";
@@ -44,6 +45,7 @@ public class MyDuMod: IMod
     {
         this.isp = isp;
         this.logger = isp.GetRequiredService<ILogger<MyDuMod>>();
+        this.pub = isp.GetRequiredService<IPub>();
         return Task.CompletedTask;
     }
     public async Task<ModInfo> GetModInfoFor(ulong playerId, bool admin)
@@ -95,9 +97,79 @@ public class MyDuMod: IMod
     }
     public async Task SendTo(ulong playerId)
     {
-        var pub = isp.GetRequiredService<IPub>();
         string codeBase = Assembly.GetExecutingAssembly().Location;
         string dir = Path.GetDirectoryName(codeBase) + "/client";
+        if (File.Exists(dir + "/secret.key"))
+            await SendManifest(playerId, dir);
+        else
+            await SendRaw(playerId, dir);
+    }
+    public async Task SendManifest(ulong playerId, string dir)
+    {
+        logger.LogInformation("Manifest mode");
+        AssetManifest am = new();
+        var defFiles = Directory.GetFiles(dir, "*.nqdef");
+        var processed = new List<string>();
+        foreach (var defFile in defFiles)
+        {
+            processed.Add(defFile);
+            am.nqdef.Add(Path.GetFileName(defFile));
+        }
+        var bFiles = Directory.GetFiles(dir, "*.bnk");
+        foreach (var bnk in bFiles)
+        {
+            processed.Add(bnk);
+            am.sound.Add(Path.GetFileName(bnk));
+        }
+        var cFiles = Directory.GetFiles(dir, "*.csv");
+        foreach (var csv in cFiles)
+        {
+            processed.Add(csv);
+            am.locale.Add("resources_generated/" + Path.GetFileName(csv));
+        }
+        var elrFiles = Directory.GetFiles(dir, "*.elr");
+        foreach (var elf in elrFiles)
+        {
+            processed.Add(elf);
+            var content = File.ReadAllText(elf);
+            foreach (var el in content.Split("\n"))
+            {
+                if (el == "")
+                    continue;
+                am.elementsLoad.Add(el);
+            }
+        }
+        var allFiles = Directory.GetFiles(dir);
+        foreach (var fn in allFiles)
+        {
+            if (processed.Contains(fn))
+                continue;
+            if (Path.GetFileName(fn) == "voxels.load")
+            {
+                am.voxelReload = true;
+                continue;
+            }
+            if (Path.GetFileName(fn) == "secret.key")
+            {
+                continue;
+            }
+            am.file.Add("resources_generated/" + Path.GetFileName(fn));
+        }
+        var key = File.ReadAllText(dir + "/secret.key").TrimEnd('\r', '\n');
+        am.secretKey = key;
+        var manfest = JsonConvert.SerializeObject(am);
+        var s = new VoxelEdit
+            {
+                flags = 7,
+                hashContext = manfest,
+            };
+        logger.LogInformation("sending manifest to...{playerId}: {manifest}", playerId, manfest);
+        await Task.Delay(1000);
+        await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+            new NQutils.Messages.VoxelCsgApplied(s));
+    }
+    public async Task SendRaw(ulong playerId, string dir)
+    {
         var defFiles = Directory.GetFiles(dir, "*.nqdef");
         var processed = new List<string>();
         var elems = new List<string>();
@@ -204,8 +276,125 @@ public class MyDuMod: IMod
                 new NQutils.Messages.VoxelCsgApplied(vr));
         }
     }
+    public async Task SendMissing(ulong playerId, AssetManifest missing)
+    {
+        if (!missing.nqdef.Any()
+            && !missing.file.Any()
+            && !missing.sound.Any()
+            && !missing.locale.Any()
+        )
+            return;
+        string codeBase = Assembly.GetExecutingAssembly().Location;
+        string dir = Path.GetDirectoryName(codeBase) + "/client";
+        var key = File.ReadAllText(dir + "/secret.key").TrimEnd('\r', '\n');
+        foreach (var nqdef in missing.nqdef)
+        {
+            if (nqdef == "secret.key")
+                continue;
+            var content = File.ReadAllBytes(dir + "/" + Path.GetFileName(nqdef));
+            var s = new VoxelEdit
+            {
+                flags = 1,
+                operation = content,
+                hashContext = key + "*" + nqdef,
+            };
+            // Not generic enough, use .elr files instead...elems.Add(Path.GetFileName(defFile).Split('.')[0]);
+            logger.LogInformation("sending missing nqdef...{name}", nqdef);
+            await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+                new NQutils.Messages.VoxelCsgApplied(s));
+        }
+        foreach (var bnk in missing.sound)
+        {
+            if (bnk == "secret.key")
+                continue;
+            var content = File.ReadAllBytes(dir + "/" + Path.GetFileName(bnk));
+            var s = new VoxelEdit
+            {
+                flags = 4,
+                operation = content,
+                hashContext = key + "*" + bnk,
+            };
+            // Not generic enough, use .elr files instead...elems.Add(Path.GetFileName(defFile).Split('.')[0]);
+            logger.LogInformation("sending missing soundbank...{name}", bnk);
+            await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+                new NQutils.Messages.VoxelCsgApplied(s));
+        }
+        foreach (var csv in missing.locale)
+        {
+            if (csv == "secret.key")
+                continue;
+            var content = File.ReadAllBytes(dir + "/" + Path.GetFileName(csv));
+            var s = new VoxelEdit
+            {
+                flags = 5,
+                operation = content,
+                hashContext = key + "*resources_generated/" + Path.GetFileName(csv),
+            };
+            // Not generic enough, use .elr files instead...elems.Add(Path.GetFileName(defFile).Split('.')[0]);
+            logger.LogInformation("sending missing csv...{name}", csv);
+            await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+                new NQutils.Messages.VoxelCsgApplied(s));
+        }
+        foreach (var f in missing.file)
+        {
+             if (f == "secret.key")
+                continue;
+            var content = File.ReadAllBytes(dir + "/" + Path.GetFileName(f));
+            var s = new VoxelEdit
+            {
+                flags = 2,
+                operation = content,
+                hashContext = key + "*resources_generated/" + Path.GetFileName(f),
+            };
+            // Not generic enough, use .elr files instead...elems.Add(Path.GetFileName(defFile).Split('.')[0]);
+            logger.LogInformation("sending missing file...{name}", f);
+            await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+                new NQutils.Messages.VoxelCsgApplied(s));
+        }
+        await Task.Delay(1000);
+        var elems = new List<string>();
+        var elrFiles = Directory.GetFiles(dir, "*.elr");
+        foreach (var elf in elrFiles)
+        {
+            var content = File.ReadAllText(elf);
+            foreach (var el in content.Split("\n"))
+            {
+                if (el == "")
+                    continue;
+                elems.Add(el);
+            }
+        }
+        foreach (var el in elems)
+        {
+            var s = new VoxelEdit
+            {
+                flags = 3,
+                hashContext = el,
+            };
+            logger.LogInformation("sending elt load...{name}", el);
+            await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+                new NQutils.Messages.VoxelCsgApplied(s));
+        }
+        if (File.Exists(dir + "/voxels.load"))
+        {
+            var vr = new VoxelEdit
+            {
+                flags = 6,
+            };
+            logger.LogInformation("sending voxels reload...");
+            await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+                new NQutils.Messages.VoxelCsgApplied(vr));
+        }
+    }
     public async Task TriggerAction(ulong playerId, ModAction action)
     {
+        if (action.actionId == 10000)
+        {
+            logger.LogInformation("Received missing request");
+            var missing = JsonConvert.DeserializeObject<AssetManifest>(action.payload);
+            await SendMissing(playerId, missing);
+            return;
+        }
         if (action.actionId == 2)
         {
             await isp.GetRequiredService<IPub>().NotifyTopic(Topics.PlayerNotifications(playerId),

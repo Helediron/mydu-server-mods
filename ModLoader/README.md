@@ -49,6 +49,38 @@ accordingly.
 
 Always use lowercase file names or resource files may fail to load.
 
+## Client-side encrypted disk caching
+
+Starting from server 1.5.3 and client 1.4.6 assets can be cached by the client.
+
+### Protocol
+
+A two-step process is used:
+
+First the server send a VoxelCsgApplied with flag 7, and a serialized json
+of "AssetManifest" in hashContext.
+
+This structure (declared in NQStruct-advanced.def) contains the encryption key
+and list of assets to load from cache.
+
+The client upon reception loads all the data it has in cache, and then sends a
+ModAction call to mod "Loader" with actionId "10000", and as payload
+a serialized AssetManifest containing what was not loaded from cache.
+
+The server then sends the missing data, prefining file paths in hashContext
+with "<secret_key>*" (that is the 32 bytes key expressed in hex then a star).
+
+Finally the server sends optional element reload requests, and voxel load request.
+
+The new data will be cached and loaded by the client.
+
+Note: the client processes voxel and element reload upon manifest
+reception if and only if everything was loaded from cache.
+
+### Using ModLoader
+
+Simply create a file named "secret.key" with a hex-encoded 32 bytes random value
+to activate the feature.
 
 ## Sample voxel nqdef
 
