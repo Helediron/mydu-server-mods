@@ -39,7 +39,7 @@ public class MyDuMod: IMod
     private IPub pub;
     public string GetName()
     {
-        return "Loader";
+        return "SyncLoader";
     }
     public Task Initialize(IServiceProvider isp)
     {
@@ -49,8 +49,12 @@ public class MyDuMod: IMod
         return Task.CompletedTask;
     }
     public async Task<ModInfo> GetModInfoFor(ulong playerId, bool admin)
-    {
-        await SendTo(playerId);
+    { // For SyncLoader, always return a ModInfo even with no actions
+      // that is required for client detection
+        if (playerId == 0)
+            await Task.Delay(1); // lazy me
+        
+        //await SendTo(playerId);
         return new ModInfo
         {
             name = GetName(),
@@ -160,7 +164,7 @@ public class MyDuMod: IMod
         var manfest = JsonConvert.SerializeObject(am);
         var s = new VoxelEdit
             {
-                flags = 7,
+                flags = 17,
                 hashContext = manfest,
             };
         logger.LogInformation("sending manifest to...{playerId}: {manifest}", playerId, manfest);
@@ -377,17 +381,29 @@ public class MyDuMod: IMod
         }
         if (File.Exists(dir + "/voxels.load"))
         {
-            var vr = new VoxelEdit
+            var ve = new VoxelEdit
             {
                 flags = 6,
             };
             logger.LogInformation("sending voxels reload...");
             await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
-                new NQutils.Messages.VoxelCsgApplied(vr));
+                new NQutils.Messages.VoxelCsgApplied(ve));
         }
+        var vr = new VoxelEdit
+        {
+            flags = 8,
+        };
+        logger.LogInformation("sending finished...");
+        await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
+            new NQutils.Messages.VoxelCsgApplied(vr));
     }
     public async Task TriggerAction(ulong playerId, ModAction action)
     {
+        if (action.actionId == 0)
+        {
+            await SendTo(playerId);
+            return;
+        }
         if (action.actionId == 10000)
         {
             logger.LogInformation("Received missing request");

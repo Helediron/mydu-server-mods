@@ -82,6 +82,22 @@ reception if and only if everything was loaded from cache.
 Simply create a file named "secret.key" with a hex-encoded 32 bytes random value
 to activate the feature.
 
+## Synchronous mode
+
+Starting from client 1.4.7 asset loading can happen synchronously at the start
+of the login sequence.
+
+The client enables this mode if it detects a Mod named "SyncLoader".
+
+It then sends a manifest request by pushing a ModAction to SyncLoader
+with code 0. The login sequence will remain frozen until a VoxelCsgApplied
+is received with flag 8, unless everything in a received manifest is loaded
+from cache.
+
+The manifest must be sent as a VoxelCsgApplied with flag 17 instead of 7, so
+that the client knows to send ModAction with delta to "SyncLoader" instead of
+"Loader"
+
 ## Sample voxel nqdef
 
 This sample expect files "<name>_c.dds", "<name>_n.dds" and "<name>_mrao.dds"
