@@ -455,7 +455,17 @@ Element:
     value: 3
   extraPlugs:
     type: ExtraPlugs
+  fittingCapacity:
+    help: Base fitting capacity points consumed by this element
+    type: int
+    value: 0
   dynamic_properties:
+    fittingCapacity:
+      help: Current fitting capacity
+      type: DynamicPropertyInt
+      default:
+        hasMin: false
+        isReadOnly: true
     gameplayTag:
       type: DynamicPropertyString
       default:
@@ -2254,11 +2264,6 @@ RadarUnit:
       - { key: "PlugType::PLUG_CONTROL", count: "nbControlPlugIn" }
 RadarPVPUnit:
   parent: CombatDefense
-  fittingCapacity:
-    help: Base fitting capacity points consumed by this element
-    type: int
-    min: 0
-    value: 25
   maxIdentifiedTargets:
     help: base amount of targets that may be identified at a time
     type: int
@@ -2358,12 +2363,6 @@ RadarPVPUnit:
     min: 0.00000001
     value: 1
   dynamic_properties:
-    fittingCapacity:
-      help: Current fitting capacity
-      type: DynamicPropertyInt
-      default:
-        hasMin: false
-        isReadOnly: true
     maxIdentifiedTargets:
       help: Current max identified target
       type: DynamicPropertyInt
@@ -2455,11 +2454,6 @@ Scrap:
     value: 0
 WeaponUnit:
   parent: CombatDefense
-  fittingCapacity:
-    help: Base fitting capacity points consumed by this element
-    type: int
-    min: 0
-    value: 50
   baseDamage:
     help: base weapon damage on deploy independently from ammo or skill level
     type: double
@@ -2568,12 +2562,6 @@ WeaponUnit:
     type: string
     value: xs
   dynamic_properties:
-    fittingCapacity:
-      help: Current fitting capacity
-      type: DynamicPropertyInt
-      default:
-        hasMin: false
-        isReadOnly: true
     baseDamage:
       help: Current weapon base damage
       type: DynamicPropertyDouble
@@ -4603,6 +4591,10 @@ Talent:
     help: order of display within a group from lower to higher.
     type: int
     value: 0
+  internalTalent:
+    help: "set to true for talents that can't be trained directly"
+    type: bool
+    value: false
 Construct:
   parent: GameplayObject
   immobilitySpeedThreshold:
