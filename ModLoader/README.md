@@ -49,6 +49,11 @@ accordingly.
 
 Always use lowercase file names or resource files may fail to load.
 
+If you create new skins for elements, an element load request (see .elr above) must be sent with the
+full element name "ElementName_SkinName".
+
+If "inherit" is used in nqdefs, element load requests must be sent in proper order (parent first).
+
 ## Client-side encrypted disk caching
 
 Starting from server 1.5.3 and client 1.4.6 assets can be cached by the client.
