@@ -10,12 +10,31 @@ Be careful not to have overlapping planets.
 
 ## How to import a legacy planet into the game
 
+### Setting correct position and construct id.
+
 First, edit the json file with a text or json editor. Two things need to be changed:
 
 - constructIdHint: this is the construct id the planet will have. It must be between 1 and 100 and not be already used.
 - position: x,y,z absolute universe coordinates of the planet. Do not overlap anything.
 
 Do not set any rotation or things will break bad.
+
+### Importing through Backoffice.
+
+Simplest way is to use the backoffice construct import feature: Go to the constructs view, hit the import button.
+
+In the form that shows up select your json file, and tick:
+
+- user construct
+- replace if exists
+
+
+Then hit import. The backoffice should then show the page for your newly imported construct. Check that construct id is correct.
+
+Now restart the server and the planet should be visible.
+
+### Alternative: Importing through backend command
+
 
 Once done, run the following commands:
 
@@ -29,6 +48,9 @@ Once done, run the following commands:
     ./server.py -c /config/dual.yaml fixture import_planet /input/legacy-planets-with-ore/ore-alioth.json
 
 Replace "ore-alioth.json" in the last command with your planet file name.
+
+
+## Final words
 
 A full stack restart is required after importing or deleting a planet.
 
