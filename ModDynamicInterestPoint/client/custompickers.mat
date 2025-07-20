@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<materials version="2.3">
+        <material name="picker1000" parent="picker_white">
+                <options cast_shadow="0" cast_world_shadow="0"/>
+                <texture name="albedo">resources_generated/picker1000.dds</texture>
+        </material>
+</materials>

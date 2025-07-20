@@ -748,3 +748,12 @@ struct AssetManifest
     vector<string> elementsLoad
     bool voxelReload
 end
+
+struct DynamicInterestPoint
+    uint64 planetId
+    int32  markType
+    uint64 uniqueId
+    DetailedLocation location
+    string name
+    string description
+end

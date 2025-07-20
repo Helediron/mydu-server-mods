@@ -1,0 +1,7 @@
+{
+"ui": {
+  "planetMapCustom": {
+  	"picker1000": "resources_generated/custompickers.node"
+    }
+  }
+}
