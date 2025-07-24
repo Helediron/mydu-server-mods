@@ -36,6 +36,8 @@ namespace NQ.Interfaces
         Task<bool> IsEnabled();
         Task PlayerConnected();
         Task ForceAdvance();
+        /// Set value and notify client. Use for untrainable talents only
+        Task SetLevel(ulong talent, int level);
 
         /// Try try to use/deploy/craft itemId. Returns modifiers to apply or throws if requirements are not met
         Task<GameplayModifiers> Use(ulong itemId);
