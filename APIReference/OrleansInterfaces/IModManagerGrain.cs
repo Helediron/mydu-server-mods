@@ -10,5 +10,6 @@ namespace NQ.Interfaces
         Task<EmptyStruct> TriggerModAction(ulong playerId, ModAction action);
         Task RegisterMod(IMod mod);
         Task Initialize();
+        Task<object> InvokeHook(string modName, string modAction, List<byte[]> sargs);
     }
 }
