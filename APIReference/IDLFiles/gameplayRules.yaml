@@ -459,7 +459,56 @@ Element:
     help: Base fitting capacity points consumed by this element
     type: int
     value: 0
+  modInteractionType:
+    help: Set mod interaction to simple,switch,anchor,hold
+    type: string
+  modActivateLabel:
+    help: Set label to activate
+    type: string
+    value: activate
+  modDeactivateLabel:
+    help: Set label to deactivateCollidingElements
+    type: string
+    value: deactivate
+  modDeactivateOnBroken:
+    help: Auto deactivate on broken
+    type: bool
+    value: true
+  modRightToActivate:
+    help: RDMS right required to activate or 0 for none
+    type: int
+    value: 0
+  modRightToDeactivate:
+    help: RDMS right required to deactivate or 0 for none
+    type: int
+    value: 0
+  modInteractWhileCoreBroken:
+    help: allow interaction if core is broken
+    type: bool
+    value: false
+  modInteractWhileTokenized:
+    help: allow interaction if construct is tokenized
+    type: bool
+    value: false
+  modInteractInSurrogate:
+    help: allow interaction if player is surrogate
+    type: bool
+    value: false
+  modInteractInSandbox:
+    help: allow interaction if player in sandbox
+    type: bool
+    value: false
+  modEventName:
+    help: javascript event to trigger on interaction
+    type: string
+    value: modInteraction
   dynamic_properties:
+    modActive:
+      help: active state for mod elements
+      type: DynamicPropertyBool
+      default:
+        isSavedInBlueprint: false
+        requireInstance: false
     fittingCapacity:
       help: Current fitting capacity
       type: DynamicPropertyInt
@@ -3126,6 +3175,9 @@ FeaturesList:
     type: bool
     value: false
   allowIndustryOnDynamicConstruct:
+    type: bool
+    value: false
+  allowMiningUnitOnDynamicConstruct:
     type: bool
     value: false
   allowMissionContainerOnDynamicConstruct:
