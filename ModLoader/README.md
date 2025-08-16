@@ -103,6 +103,14 @@ The manifest must be sent as a VoxelCsgApplied with flag 17 instead of 7, so
 that the client knows to send ModAction with delta to "SyncLoader" instead of
 "Loader"
 
+## Compression
+
+Starting from client 1.4.10 if a loaded resource file (not nqdef!) has extension '.nqz'
+it will be recognized as a NQ compressed file and decompressed before injection into the
+unigine virtual file system.
+
+To generate nqz files one can use the 'nqcompress.py' script provided in this directory.
+
 ## Sample voxel nqdef
 
 This sample expect files "<name>_c.dds", "<name>_n.dds" and "<name>_mrao.dds"
