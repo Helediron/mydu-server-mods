@@ -157,7 +157,8 @@ public class MyDuMod: IMod
             {
                 continue;
             }
-            am.file.Add("resources_generated/" + Path.GetFileName(fn));
+            var pfx = Path.GetFileName(fn).EndsWith(".lua") ? "lua/" : "resources_generated/";
+            am.file.Add(pfx + Path.GetFileName(fn));
         }
         var key = File.ReadAllText(dir + "/secret.key").TrimEnd('\r', '\n');
         am.secretKey = key;
@@ -245,11 +246,12 @@ public class MyDuMod: IMod
                 continue;
             }
             var content = File.ReadAllBytes(fn);
+            var pfx = Path.GetFileName(fn).EndsWith(".lua") ? "lua/" : "resources_generated/";
             var s = new VoxelEdit
             {
                 flags = 2,
                 operation = content,
-                hashContext = "resources_generated/" + Path.GetFileName(fn),
+                hashContext = pfx + Path.GetFileName(fn),
             };
             logger.LogInformation("sending misc...{name}", fn);
             await pub.NotifyTopic(Topics.PlayerNotifications(playerId),
@@ -344,11 +346,12 @@ public class MyDuMod: IMod
              if (f == "secret.key")
                 continue;
             var content = File.ReadAllBytes(dir + "/" + Path.GetFileName(f));
+            var pfx = f.EndsWith(".lua") ? "lua/" : "resources_generated/";
             var s = new VoxelEdit
             {
                 flags = 2,
                 operation = content,
-                hashContext = key + "*resources_generated/" + Path.GetFileName(f),
+                hashContext = key + "*" + pfx + Path.GetFileName(f),
             };
             // Not generic enough, use .elr files instead...elems.Add(Path.GetFileName(defFile).Split('.')[0]);
             logger.LogInformation("sending missing file...{name}", f);
