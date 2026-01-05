@@ -502,6 +502,26 @@ Element:
     help: javascript event to trigger on interaction
     type: string
     value: modInteraction
+  minConstructSizeCategory:
+    help: minimal construct size category xs, s, m, l
+    type: string
+    value: xs
+  interactionAuthorize:
+    help: javascript event to authorize the interaction
+    type: string
+    value: ''
+  interactionParameters:
+    help: parameters passed to authorize event
+    type: string
+    value: ''
+  activateLabel:
+    help: override label for activate action
+    type: string
+    value: ''
+  deactivateLabel:
+    help: override label for deactivate action
+    type: string
+    value: ''
   dynamic_properties:
     modActive:
       help: active state for mod elements
@@ -605,6 +625,34 @@ Element:
       default:
         isReadOnly: true
         isSavedInBlueprint: false
+        isSavedInInventory: false
+    interactionAuthorize:
+      help: javascript event to authorize interaction
+      type: DynamicPropertyString
+      default:
+        defaultValue: ''
+        isSavedInBlueprint: true
+        isSavedInInventory: false
+    interactionParameters:
+      help: parameters passed to authorize event
+      type: DynamicPropertyString
+      default:
+        defaultValue: ''
+        isSavedInBlueprint: true
+        isSavedInInventory: false
+    activateLabel:
+      help: override label for activation
+      type: DynamicPropertyString
+      default:
+        defaultValue: ''
+        isSavedInBlueprint: true
+        isSavedInInventory: false
+    deactivateLabel:
+      help: override label for deactivation
+      type: DynamicPropertyString
+      default:
+        defaultValue: ''
+        isSavedInBlueprint: true
         isSavedInInventory: false
   plug_properties:
     base: true
@@ -2606,10 +2654,6 @@ WeaponUnit:
     enum: true
     type: WeaponType
     value: CANNON
-  minConstructSizeCategory:
-    help: minimal construct size category xs, s, m, l
-    type: string
-    value: xs
   dynamic_properties:
     baseDamage:
       help: Current weapon base damage
@@ -3315,6 +3359,14 @@ PVPConfig:
     help: Delay between two construct damaged notification for the same construct, in s (default 20min)
     type: int
     value: 1200
+  hitMissFormula:
+    help: Custom mathematical formula for hit/miss ratio
+    type: string
+    value: ''
+  logHitMiss:
+    help: Enable hit/miss computation logging
+    type: bool
+    value: false
 CoreUnitStressConfig:
   parent: FeaturesConfig
   hpToStressRatio:
