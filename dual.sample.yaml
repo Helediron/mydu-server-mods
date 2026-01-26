@@ -1,0 +1,602 @@
+environment: local                        # Running environment
+
+analytics:    # Configurations for the processing of the analytics in the front.
+   kafka_address:       ""                # address of the kafka cluster to write.  This is a comma separated list of addresses.
+   topic:               ""                # Topic onto which we push events.
+   topic_production:    ""                # Anciliary topic for consumable production events
+
+redis:
+   host:               127.0.0.1
+   port:               6379
+   db:                 2                  # redis DB to use for BO communications. Must match with BO environment variable
+   cluster:            false              # when true, connect to a redis cluster.
+
+scenegraph_redis:
+   host:               127.0.0.1
+   port:               6379
+   db:                 6                  # redis DB to use for internal shared scenegraph
+   cluster:            false              # when true, connect to a redis cluster.
+
+redis_orleans_session:
+   host:               127.0.0.1
+   port:               6379
+   db:                 7                  # redis DB to use for Orleans storage at session level
+   cluster:            false              # when true, connect to a redis cluster.
+
+postgres:
+   host:               127.0.0.1
+   port:               5432
+   database:           dual
+   user:               dual
+   password:           dual
+   max_connection:     20                  # max number of connections.  Only honored by go and C# apps
+
+orleanspostgres:
+   host:               127.0.0.1
+   port:               5432
+   database:           orleans
+   user:               dual
+   password:           dual
+
+influxdb:
+   enabled:            false
+   # when the url is there, it overrides host/port
+   url:                ""
+   http:               true                # use HTTP or UDP protocol?
+   host:               127.0.0.1           # ip of the influx server
+   port:               8086                # port of the HTTP (or UDP) endpoint
+   db:                 dual                # (HTTP only)
+   user:               root                # (HTTP only)
+   password:           root                # (HTTP only)
+
+mongodb:
+   uri:                mongodb://localhost:27017
+   database:           dual
+
+http:
+    market_service:         'http://localhost:8080'   # URL of the market service where the node will connect
+    voxel_service:          'http://localhost:8081'    # URL of the voxel service where the node will connect
+    voxel_service_editor:   'http://localhost:8081' # URL of the voxel service editor.  Can be the same as [voxel_service] (if false sharding)
+    voxel_public_url: ""                         # url of the voxel service as seen from the outside.  If not set, http.voxel_service is used
+    orleans_public_url: ""                       # url of Orleans, as seen from the outside.  If not set, gameplay.base is used.
+    user_content_cdn: ""   # Url to get user content. If empty will route through gameplay service
+    max_connection: 0                       # limit number of sockets to a host (by default, unlimited)
+    use_http2: false                         # http2 is enable by default if libcurl supports it.
+
+market:                                   # settings specific to the market service
+   port: 8080                             # listen port (default 8080)
+   s3_orders:                            # s3 keys to alows access on the bucket with the orders
+      access_key: ""
+      secret_key: ""
+      override_path: market # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+voxel_editor:
+   timeout: 3s
+
+voxel:                                     # settings specific to the voxel service
+    temp_db:
+      # This is the database for the temporary db that does our writing cache.
+      # This should be deprecated now.
+      uri:       "mongodb://localhost:27017"
+      database:  "dual"
+    cache_retention: 0s   # when a positive duration (like 30m), keep in the tempdb  before commiting to the final storage.
+
+    # db stuffs
+    ignore_default_db: true                # when true, consider that all the voxels are in the following section
+                                           # when false, the system can be hybrid: it read from the default db
+                                           # and it writes to the sharded db.
+                                           # At some point, the default db will be gone.
+
+    db:
+      # this configure a business sharding (bad), when we have 2 or more entries there.
+      # the expected value  should have this form
+      #     db:
+      #             - uri: mongodb://localhost:27017
+      #               database: voxel1
+      #               construct_id: 2
+      #             - uri: mongodb://localhost:27017
+      #               database: voxel2
+      #               construct_id: 2
+      #             - uri: mongodb://localhost:27017
+      #               database: voxel3
+      #               construct_id: 4
+      #             # all the others
+      #             - uri: mongodb://localhost:27017
+      #               database: voxel4
+
+      # it means that construct 2 goes on shard 0 and 1
+      #    construct 4 goes on shard 2
+      #  all the others (including blueprints) goes to 3.
+      #
+      # It is possible to specify just one shard:
+      #     db:
+      #             - uri:                     mongodb://localhost:27017
+      #               database:               voxel
+      #               read_from_secondary:    false       # should we read from the secondary, this is dangerous.  Better not.
+      #               sharded:                false       # say the mongo server is sharded
+      #               k_is_there:             false       # assume the key `k` is always present on all docs.
+      #               skip_index_creation:    false       # don't attempt to create the index at bootstrap
+      #               no_construct:           false       # no more construct on this db
+      - uri:       "mongodb://localhost:27017"
+        database:  "dual"
+    next_db: []
+      # this is the same as the previous section.
+      # when non nil, it puts the voxel service in a hybrid mode.  Read are done on `db`, writes are done on `next_db`.
+
+    redis:
+      # this is for the cellversion cache
+      host:               127.0.0.1
+      port:               6379
+      db:                 3                # redis DB to use for BO communications. Must match with BO environment variable
+    port: 8081                             # http listen port (default 8081) for the cell service
+    editor_port: 8091                      # http listen port for the editor service
+    max_pipeline_cached: 1000              # number of pipeline a voxel service will cache.
+    metadata_tracing: false                # write some debug info in the metadata
+    redis_cell_data:
+      # this is the redis for the cell data cache.
+      host:    127.0.0.1
+      port:    6379
+      cluster: false
+      db:      4
+
+    procgen_cache:
+      # configuration for the procedural generation cache
+      redis:
+         host:    127.0.0.1
+         port:    6379
+         cluster: false
+         db:      5
+      ttl: 0s                             # time to keep an entry in the cache.  0s means infinite.
+
+    max_operation_publication_lod: 4       # don't publish propagation operation above this LOD (voxel convention, starts at 0)
+    purge_cache_on_startup: true           # purge the redis cell state on startup.
+                                           # This is on by default because we want to avoid stale cache on dev envs.
+                                           # But on prod, it is better to disable it, since there should be no need
+                                           # to purge a valuable cache between sessions.
+    compute_debug_voxel_hash: false        # Activate various hash computation in voxel operation
+
+queueing:                                  # settings specific to the queueing service
+    listen_urls:         ['http://::9630']
+    players_per_batch:   50                         # How many players will try to be unqueued
+    delay_between_batch: 10s                        # At which frequency players will try to be unqueued
+    max_players_per_front: 300
+    allow_bypass: true
+    always_bypass: false                    # All players will bypass queing and will be dispatched to the same front (allows ~3s faster login)
+    allow_high_priority: true
+    jwt_issuer:  "http://localhost"
+    jwt_audience: "dual-universe-dev"
+
+    start_maintenance:  false                # start the queueing service in maintenance mode
+    resets: []                               # day and time of resets (format: "<day_of_week> hh:mm", ex: ["monday 14:00"])
+                                             # NB: the case of day_of_week doesn't matter, but you cannot abbreviate it
+
+log:
+   to_file_prod:        false              # write full logs to 'log.path'/server_name.log
+   to_file_dev:         false              # write readable logs to 'log.path'/server_name_dev.log
+   to_stdout_dev:       true               # write readable logs to stdout
+   enable_logging_actor: true              # write logs through an actor or directly.
+   path:                local/log          # make sure the path exists and is writable
+   color:               true               # color the logs on stdout; needs an ANSI compatible terminal
+   level:               2                  # log level to file (1 -> TRACE, 2 -> DEBUG)
+   console_level:       3                  # log level to console
+   log4j_file:          null               # path to a log4j file that will be open in append mode.
+                                           # During dev, it is convenient to redirect all the infra process logs
+                                           # to this file.
+   dotnet_verbose:      false              # do not filter .NET framework logs
+   dotnet_roll_size_limit: 150000000       # Role dotnet log file at this size
+   dotnet_roll_file_count: 10              # Number of log files to keep
+   server_py_log_commands : false          # do server.py needs to log commands he is performing ? Developpers don't want because it's useless, useful for tracability on commands performed automaticly
+
+stats:
+   flush_tick:               10s           # how often do we flush the accumulated data to influx
+   db_tick:                  10s           # how often do we aggregate the DB stats
+   dispatcher_tick:          10s           # tick time for FrontADispatcher & LoadAPlayerConnectionManager
+   registry_tick:            10s           # tick time for ActorRegistry
+   pushgateway: null                       # address to the prometeus pushgateway (used in bots)
+
+
+loadbalancer:
+   ip:                 127.0.0.1           # or some.host.name
+                                           # hostname for internal communications with front and nodes
+                                           # TODO: rename that to `host` because the name suggest it is an IP address, but
+                                           # in practice, this is a host name.
+   base_port:          9000                # base port. Note that several ports following the base_port are opened,
+                                           # be sure to have appropriate firewall rules
+   rest_port:          8001                # Rest port, replace Webi
+
+front:
+   host:                      127.0.0.1               # ip for *internal* communications with load-balancer
+   internal_port:             9200                    # port for internal communications with load-balancer
+   external_host:             ""                      # host for game clients. If not set, front.internal_host is used.
+   external_port:             9630                    # port for game clients; careful with it, game clients must have the same!
+   queueing_url:              'http://127.0.0.1:9630' # queueing system url
+   update_flow_control:       false                   # perform flow-control on playerupdates
+   item_bank_url:               'http://localhost:9630/public/itembank/serialized' # target bo to get the itembank
+   grpc_crypto:
+      san: novaquark.com  # Subject Alternative Name the client must use
+      certificate: # there is a default value hardcoded in the source
+      key:         # there is a default value hardcoded in the source
+   rabbit_prefetch:           10                      # when > 0, limit the number of unack message per player
+   timeout:                   60s                     # grpc server timeout.  0 means unlimited.
+   rate_unlimited:              false               # don't ratelimit the calls to the server
+   messages_per_seconds:            20
+
+anticheat:
+   api_key:     "" # EQU8 API key
+   api_url:     ""   # EQU8 API base URL
+   backend:     ""         # address of the EQU8 backend (including port)
+   session_key: "" # authentication key on the EQU8 backend
+   enable:      false                              # see Docs/Anticheat.md#configuration
+   enforce:     false                              # if enforced, server kicks cheaters - else, cheaters generate logs but are not kicked
+                                                   # won't do anything if `activate_anticheat` is not enabled
+   replace_with_dummy : false                      # when activated replace the anticheat wrapper by a dummy one, activate only if it crashs at startup
+   use_equ8: false
+   use_easyac: false
+   easyac:
+      product_id: ""
+      sandbox_id: ""
+      client_id: ""
+      client_secret: ""
+      encryption_key: null
+      deployment_id: ""
+
+node:
+   host:               127.0.0.1           # ip for internal communications; optional: if not specified, the server
+                                           # will try to get the address of a non-loopback network interface
+   base_port:          9300                # base port. Note that several ports following the base_port are opened,
+                                           # be sure to have appropriate firewall rules
+   entity_save_frequency: 20   # Hz        # maximum frequency for the db persistence of the visibility.
+                                           # This is per node.  That concerns constructs and players.
+                                           # In practice, for a loaded system, that will make persistence happen once per
+                                           # minutes per entity.
+   rabbit_frequency: 1000      # Hz        # max frequency for player update and construct update 
+                                           # published onto rabbit                                     
+   rdms_cache_duration: 30s
+
+balancing:
+   topology:
+      - {"points": [{"id": "ALIOTH_MOON_1", "constructId": 2}]}
+      - {"points": [{"id": "madeleine", "constructId": 5}]}
+                                           # full topology stored as list of InterestPointList (NQStruct)
+                                           # expected values for each interest point are :
+                                           # id : name of the interest point (only for manipulaiton purpose, no other impact) (default to 'default<n>')
+                                           # constructId : construct used to calculate the position (defaults to 0 aka universe)
+                                           # relativePos : relative position from the construct to calculate point position (default to center)
+                                           # ** NB : all other values are ignored **
+   strict_topology:    false               # check if the topology match the number of nodes (only for devops purpose)
+   preload_delay:      10s                 # delay between first node connection and pre-load start. Reset at each node connection
+   backup_nodes:       0                   # number of backup nodes at preloading. When a node is down, if a backup node is present, it will take
+                                           # all its PSAs.
+                                           # Notes: - Nodes started after preloading are de facto backup nodes.
+                                           #        - Number of backup nodes at preloading is capped at half the total number of connected nodes
+   startup_timeout:    600s                # timeout when we consider the startup as failed
+   preload_batch_size: 5                   # Size of batch for preload constructs
+   # node_manager config
+   max_load_per_node:   200                # max number of players in a node
+   optimal_factor:      0.8                # target load of each node (may require some adjustements for high number of nodes expected)
+   poportion_unclusterized_cell: 0.9       # proportion of cells moved autwside clustering authorized before we force reclustering
+                                           # higher value means less clustering
+   manager_tick: 10s                       # time between each processing
+   manager_wait_run: 5s                    # time to wait after starting the process until first run of the process
+   max_migration_proportion: 0.1           # proportion of migrated load in one time (compared to max load)
+   hysteresis_factor: 0.05                 # factor that manages the add/remove of nodes
+   algorithm:  "balanced"
+
+preload:
+   go_parallel: 10                        # number of constructs loaded parallel in go visibility
+   voxel_parallel: 100                    # number of queries parallel to the voxel service to complete the construct info
+   min_size: 512                          # min size of construct that will be preload
+
+migration:
+   timeout:            10s                 # timeout to consider that a migration failed
+   delay:              5s                  # time to wait before migrating a remote player
+
+auth:
+   community_api:      ""
+   strict_protocol:    true                # set to "false" to allow connection with non-strict protocol match
+   community_token:    ""                  # Bearer token to echange with community api
+   roles:
+      game_access:     ["Employees", "Bot"]  # only users with one of these roles can connect (usually Employees, AlphaAccess and/or AlphaTeamVanguard)
+                                             # adding a wildcard ("*") allows anyone to connect (they still need to authenticate)
+      staff_status:    ["Employees"]         # these roles are set as admin upon connection to the front server
+      high_priority:   ["Employees"]         # these roles will go before other
+      bypass_priority: ["Employees"]         # these roles will bypass the queue and connect immediatly
+      impersonation:   ["Employees", "Bot"]  # only users with one of these roles can use impersonation
+                                             # /!\ during impersonation, the character always has staff status
+      bot:             ["Bot"]
+
+   # To remove later
+   enabled:            true
+   passwords:          ['bokbok'] # *list* of authorized passwords when auth is disabled
+
+visibility:             # settings related to the visibility (new implementation)
+   redis:
+      host:               127.0.0.1
+      port:               6379
+      db:                 2                  # redis DB to use for BO communications. Must match with BO environment variable
+      max_rps:            1000               # limit some stream updates in redis.  This is in Hertz (Hz)
+   auto_launch:         true                      # each node will fork a visibility process.
+   psa_time_to_die:     5s   # time after a psa is killed when it is empty.
+   time_for_construct_disappear: 2s # time before a suscriber consider a construct
+                                    # as gone when no subscribed psa seems to know him
+   max_rpc_flying_request:  0    # stop writing to the rpc stream,
+                                 # when that many request are unacknowledged
+   player_update_in_construct_delay: 2s           # time between consecutive advertising of a player in a moving parent construct.
+   PublishOnRedis:      true # when true, publish also on redis pubsub at a low frequency.
+   max_connection_idle: 100000h # disconnect a public grpc strema IDLE after that time
+   max_idle_ping: 1h  # send a ping to an IDLE connection after that time
+   grpc_max_concurrent_stream: 500 # hard limit on the concurrency on a grpc connection.  This applies to front and internal grpc services. 0 means unlimited.
+   debug_log_frequency: 10  # frequency allowed per process for some kind of debug log we want on prod.  0 disables it.
+
+visibility_service:                        # section dedicated for clients of the visibility service
+   grpc_address: '127.0.0.1:9310'          # address:port of the grpc service
+
+bots:
+    magic_hash:        0                    # magical value used to identify bots with multiple use:
+                                            # On bot's Player creations: identify a bot and create a custom account
+                                            # On bot's voxel operations: allow the voxel edition
+                                            # current load tester uses the value 42424242, 0 means it is deactivated
+    override_default_inventory: false       # add some items to ALL the default player inventory, allows bots to perform some gameplay actions
+    login: ""
+    password: ""
+    env : ""                                # Tells the bot in what env we are working in (for metrics)
+    workspace : ""                          # Tells the bot in what workspace we are working in (for metrics)
+
+debug:
+   max_voxel_cells_per_operation: 64       # Max number of Cell that can be updated in one Voxel operation (keep in mind that to double the op size you need to x8 the number of Cells)
+   enable_fetch:       false               # can the players fetch their constructs ?
+   database_timeout:   10s                 # Database requests default timeout
+   debug_error_messages: true              # more debug info in error messages.  This setting must be set to false in production.
+
+pubsub:
+    broker: 'amqp://guest:guest@localhost:5672'    # RabbitMQ broker url
+    shards: 1024
+    broker_tracker: '' # if non empty, separate rabbitmq for request traker
+    queue_ttl: 600s       # Time a message stays in a rabbit queue. Past this delay, we consider it dead and destroy it
+    queue_name: playerRabbit2
+    queue_max_length: 1000
+    channel_bounds: 1000 # The max number of messages pushed to the pubsub queue. If exceeded this threshold, the producers will await messages to be dispatched asynchronously before move on (i.e. an async backpressure logic).
+
+gameplay:
+    base:     'http://localhost:10111'       # Gameplay route base url
+    go_orleans_router_use_native: false       # Go : talk to Orleans using the native router. | if false, we currently use grpc
+
+gameplayservices:
+    port:   10111                # Listen port for all GameplayServices in http1
+    port_http2: 10112            # Listen port for all GameplayServices in http2
+    max_concurrent_stream: 1000  # number of concurrent stream in a http2(grpc) connection
+    endpoint: localhost
+    grpc_endpoint: 'localhost:10112'
+    autoheal: false    # Try to heal state inconsistencies (for dev only)
+
+orleans:
+    silo_port: 11111
+    gateway_port: 30000
+    dashboard_port: 8099
+    dashboard_update_interval: 10s
+    local_silo_address: '127.0.0.1'
+    cluster_id: gps
+    service_id: gps
+    telemetry_key: ''  # Microsoft(R) Application(TM) Insight(c) telemetry key
+    industry_init: true  # Industries should be initialized on that grain
+    local_silo: false # Tell the client to connect to localhost instead of using membership table
+    rdms_cache_duration: 30s
+    enable_reminders: true
+    override_sandbox_fixtures_path: '' # local path where sandbox fixtures are, empty to use svn
+    sps_cache_duration: 60s
+    auto_bootstrap: True # Bootstrap self, do not wait for /bootstrap call
+    publish_threads: 3 # Number of rabbitmq publishing threads
+    enable_community_rewards: false # Enable fetching rewards from community
+    internalpubsub_ttl: 600s
+    reminder_parallelism: 250 # mask number of reminders to run in parallel
+    clear_legacy_reminder: true # clear orleans reminder when setting/clearing a NQ reminder
+    grain_collection_age: 1200s  # Default period of inactivity necessary for a grain to be available for collection and deactivation
+                                 # currently 20 minutes, never less than 1 minute
+    start_autocompaction: false # default beahvior is to continue as before
+    start_market_records: false # default beahvior is to continue as before
+
+backoffice:                                # settings specific to the backoffice
+   listen_urls:         ['http://::12000']
+   clientapp_path:      "ClientApp"        # Path to the frontend client app
+   log_ef_sql:          true               # Include Entity Framework Core SQL commands in logs even if log.dotnet_verbose is set to false
+   show_exceptions:     false              # Show exceptions details to users in BO2
+   s3:
+      access_key: ""
+      secret_key: ""
+      region: ""
+      bucket: ""
+      prefix: ""
+      override_path: backoffice # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+   administrator_roles:       ['Employees'] # list of LDAP groups allowed to do admin tasks on the BO
+   customer_support_roles:    ['Employees'] # list of LDAP groups allowed to do customer support tasks on the BO
+   game_designer_roles:       ['Employees'] # list of LDAP groups allowed to do GD tasks on the BO
+   server_developer_roles:    ['Employees'] # list of LDAP groups allowed to do server developer tasks on the B
+   oauth_endpoint:            "" # oauth authority
+   oauth_client_id:           "backoffice" # backoffice oauth client id
+   oauth_client_secret:       "" # backoffice oauth client secret (default for development env.)
+   oauth_valid_audience:      "novaquark-dev" # backoffice oauth audience (default for development env.)
+   oauth_valid_issuer:        "novaquark-dev" # backoffice oauth issuer (default for development env.)
+
+notifications:
+   env: local
+   notify_orleans: true
+   dest_ready: []
+   dest_assert: []
+
+monitor:                                  # settings specific to the monitor
+   listen_urls:         ['http://::12001']
+   gc_lifetime:         600
+
+
+organizations:                            # settings specific to the C# organization micro service
+   listen_urls:         ['http://::12002']
+   log_ef_sql:          true              # Include Entity Framework Core SQL commands in logs even if log.dotnet_verbose is set to false
+   sentry_api_key:      ""                # Sentry key for logging unhandled exceptions in prod env
+
+constructs:                               # settings specific to the C# construct micro service
+   listen_urls:         ['http://::12003']
+   base:                "http://localhost:12003"
+
+mesh:
+   # when the mesh service is deployed everywhere, we will change the default to be able
+   # to launch one on dev's machine.
+
+   public_url:    ""                         # prefix url of the mesh service, from the client point of view.
+                                             # when empty, `base` is used
+   base:          ""                         # prefix url for inter service communication
+                                             # when empty, use http.voxel_service
+   listen_port:   0                          # port to bind.  When 0, don't start the service.
+
+   concurrency:   0                          # when > 0, the number of concurrent mesh buildind we do on a given service
+                                             # When 0, this is the number of physical cores.
+
+   mongodb:                     # mongo db credentials
+      uri:                mongodb://localhost:27017
+      database:           dual
+
+   kafka:   # kafka setup for the dispatching of the mesh rebuild jobs.
+      address: "localhost:9093"
+      topic: nqmesh
+      consumer_group: nqmesh_consumer
+
+client_tracker:                               # settings specific to the C# construct micro service
+   listen_urls:         ['http://::12004']
+   delay_between_batch: 60                   # Time in seconds between 2 buffers sent to S3
+   localDebugPath:      ""                   # if aws setting not specified : store client requests in debug path
+   kafka_sink:
+      kafka_address:       ""                # address of the kafka cluster to write.  This is a comma separated list of addresses.
+      topic:               ""                # Topic onto which we push events.
+   s3:                                       # if specified : Used to retrieve old data and reinject them to es
+      access_key: ""
+      secret_key: ""
+      region: ""
+      bucket: ""
+      prefix: ""
+      override_path: client_tracker # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+   es:                                       # if specified : store client requests inside an elasticsearch
+      access_key: ""
+      secret_key: ""
+      endpoint: ""                           # for example locally "http://localhost:9200"
+      prefix: "player-log"
+   unstack_threads: 3                        # Number of threads that will unstack and serialize client requests
+
+tutorials:
+   access_key: ""
+   secret_key: ""
+   region: ""
+   bucket: ""
+   prefix: ""
+   override_path: tutorials # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+
+fixture:
+   specialOwnerNames: ["Aphelia"]         # Name of special owners which will be used to get them back on fixture loading even if the id have changed.
+   fixture_players: [2, 3, 2000]          # players that should be considered as fixtures and exported
+
+telemetry:
+   enable: false         # enable telemetry (beware of runtime cost)
+   enable_console: false # telemetry goes to the console
+   trace_probability: 0.01  # probability that an incoming request is traced.
+   trace_all: false      # trace everything (very costly).  It traces even more than with trace_probability == 1.
+
+   use_otlp: true        # use otlp-grpc transport when set, else use jaeger
+   jaegger_settings:     # This describes a connection to an jaeger agent over udp (jaeger.thrift)
+       agent_host: "localhost" # The Jaeger agent host address
+       agent_port: 6831 # The Jaeger agent port
+
+   otlp_settings:       # conf for otlp-grpc
+      endpoint: "http://localhost:4317"
+
+marketrecords:                               # Publicly accessible market records
+   mongo: ''                                 # url of the mongo marketHistory database
+   local_path: ''                            # Produce output at given path if not null
+   #s3:                                      # Produce output in given S3 bucket.
+   #   access_key: ""
+   #   secret_key: ""
+   #   region: ""
+   #   bucket: ""
+   #   prefix: ""
+   #   override_path: ""
+pools:
+   access_key: ""
+   secret_key: ""
+   region: ""
+   bucket: ""
+   prefix: ""
+   override_path: pools # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+
+svn:
+   svn_binary: /usr/bin/svn
+   repository: https://nowhere
+   username: guest
+   password: guest
+   branches: [r/dev, r/prod, r/preprod, r/demo, r/trailer, r/ft1, r/ft2, r/ft3, r/ft4, r/ft5]
+   environment: local
+   checkout_path: local/fixtures
+
+user_content:
+  s3:
+     access_key: ""
+     secret_key: ""
+     region: ""
+     bucket: ""
+     prefix: ""
+  override_path: user_content # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+  catalog_mongo_connection: "mongodb://localhost:27017"
+  catalog_mongo_database: dual
+  catalog_mongo_collection: s3catalog
+
+dump_gc:
+   access_key: ""
+   secret_key: ""
+   region: ""
+   bucket: ""
+   prefix: ""
+   override_path: "dump_gc" # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+
+rewards:
+   access_key: ""
+   secret_key: ""
+   region: ""
+   bucket: ""
+   prefix: ""
+   override_path: "rewards" # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+
+
+aliens:
+   access_key: ""
+   secret_key: ""
+   region: ""
+   bucket: ""
+   prefix: ""
+   override_path: "aliens" # if access_key and secret_key not set, use given directory as override (`s3.override_base_path / override_path` if not absolute)
+
+
+s3:
+  override_base_path: local/fakes3 # base path for s3 non-absolute `override_path`
+
+server_py: # options for server.py commands
+  integration_tests:
+    # how to reset database before integraion tests:
+    # * fetch_and_reset : svn fetch + reset from fixture
+    # * reset : reset from local fixtures
+    # * localdb : copy the dual.yaml database
+    # * dump : use a database dump
+    # * none : use current test database state
+    reset_method: fetch_and_reset
+    dump_location: testdbdump.zip # when reset_method=dump : path relative to serv/ (can be absolute)
+  tests:
+    output_path: local/test_output # default output path when running tests
+  ops_ssh_username: null # username used to ssh to dev / ods machines, null => svn.username
+
+nodemanager:
+   base_url:            "http://localhost:12005"   # url to target api
+   listen_urls:         ["http://::12005"]         # TODO use ports instead of listen url
+
+model_exporter:
+  listen_urls: ["http://::5142"]
+  s3:
+    override_path: "model_exporter"
+  quota_max_pending: 5
+  quota_max_daily: 50
+  log_path: '/tmp' # this is not the service logging but job logging
+  models_path: "../../stlss2"
+  max_elements: 2000
